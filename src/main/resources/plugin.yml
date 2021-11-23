@@ -1,0 +1,14 @@
+name: ${project.name}
+version: ${project.version}
+author: ${project.organization.name}
+main: de.funboyy.labymod.emote.npc.EmoteNPCPlugin
+api-version: 1.13
+
+commands:
+  emote:
+    description: Use /emote to see all commands
+    usage: /emote <arguments>
+    aliases:
+      - emotes
+      - emotenpc
+      - enpc

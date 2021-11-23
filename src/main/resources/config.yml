@@ -1,0 +1,50 @@
+prefix: "&6EmoteNPC &8|"
+
+inventory:
+  title: "&8Emotes"
+  pages: "&aPage %page% of %max%"
+  next-page: "&6next page"
+  last-page: "&6previous page"
+  stop-emote: "&cstop emote"
+
+settings:
+  look-close: true
+  sneak: true
+
+npc:
+  name:
+    prefix: ""
+    name: "&bEmotes"
+    suffix: ""
+  world: "world"
+  x: 0.5
+  y: 0.0
+  z: 0.5
+  yaw: 0.0
+  pitch: 0.0
+
+messages:
+  play-emote: "%prefix% &7The &e%emote% Emote &7will now be played!"
+  reload: "%prefix% &7The config was &asuccessfully &7reloaded!"
+  set:
+    location: "%prefix% &7The location of the NPC was set &asuccessfully&7!"
+  toggle:
+    look-close:
+      enabled: "%prefix% &7The NPC now always looks at the player!"
+      disabled: "%prefix% &7The NPC now always looks the direction specified in the &econfig.yml&7!"
+    sneak:
+      enabled: "%prefix% &7The NPC now sneaks whenever the player sneaks!"
+      disabled: "%prefix% &7The NPC no longer sneaks when the player sneaks!"
+  error:
+    labymod: "%prefix% &cYou have to use LabyMod! &o(https://labymod.net/download)"
+    only-player: "%prefix% &cYou have to be a player to execute this command!"
+    permission: "%prefix% &cInsufficient permissions!"
+  help:
+    set:
+      location: "%prefix% &e/emote set location &8> &7sets the location of the NPC to your current location"
+    toggle:
+      look-close: "%prefix% &e/emote toggle lookclose &8> &7switches whether the NPC looks at the player all the time"
+      sneak: "%prefix% &e/emote toggle sneaking &8> &7switches whether the NPC is sneaking when the player is sneaking"
+    reload: "%prefix% &e/emote reload &8> &7reload the config"
+
+debug: false
