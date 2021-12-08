@@ -121,3 +121,6 @@
 202 Kickboxer
 203 Handshake
 204 Cleaning the floor
+209 Sweat Wipe
+213 Hokuspokus
+215 The Bat
