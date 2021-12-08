@@ -35,7 +35,12 @@ public class PacketReader {
                     if (NMSReflection.getInstance().getValue(packet, "action").toString().equals("INTERACT")) {
                         final User user = UserManager.getInstance().getUser(PacketReader.this.player);
 
-                        if (user == null || (int) NMSReflection.getInstance().getValue(packet, "a") != user.getNpc().getEntityId()) {
+                        if (user == null || user.getNpc().getEntityId() == null) {
+                            super.channelRead(channelHandlerContext, packet);
+                            return;
+                        }
+
+                        if ((int) NMSReflection.getInstance().getValue(packet, "a") != user.getNpc().getEntityId()) {
                             super.channelRead(channelHandlerContext, packet);
                             return;
                         }
@@ -69,7 +74,12 @@ public class PacketReader {
                     if (NMSReflection.getInstance().getValue(packet, "action").toString().equals("ATTACK")) {
                         final User user = UserManager.getInstance().getUser(PacketReader.this.player);
 
-                        if (user == null || (int) NMSReflection.getInstance().getValue(packet, "a") != user.getNpc().getEntityId()) {
+                        if (user == null || user.getNpc().getEntityId() == null) {
+                            super.channelRead(channelHandlerContext, packet);
+                            return;
+                        }
+
+                        if ((int) NMSReflection.getInstance().getValue(packet, "a") != user.getNpc().getEntityId()) {
                             super.channelRead(channelHandlerContext, packet);
                             return;
                         }
