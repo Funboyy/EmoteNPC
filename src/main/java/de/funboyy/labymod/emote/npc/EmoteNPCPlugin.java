@@ -58,16 +58,6 @@ public class EmoteNPCPlugin extends JavaPlugin {
         }
 
         for (final User user : UserManager.getInstance().getUsers()) {
-            if (user.getNpc().isSpawned()) {
-                continue;
-            }
-
-            if (!user.isNearNPC()) {
-                continue;
-            }
-
-            user.getNpc().spawn();
-
             try {
                 final Object minecraftServer = new NMSObject(NMSReflection.getInstance().getClass("MinecraftServer"))
                         .getDeclaredMethod("getServer").invoke();
@@ -97,6 +87,16 @@ public class EmoteNPCPlugin extends JavaPlugin {
                     | NoSuchMethodException exception) {
                 exception.printStackTrace();
             }
+
+            if (user.getNpc().isSpawned()) {
+                continue;
+            }
+
+            if (!user.isNearNPC()) {
+                continue;
+            }
+
+            user.getNpc().spawn();
         }
     }
 
