@@ -2,17 +2,14 @@ package de.funboyy.labymod.emote.npc.emote;
 
 import de.funboyy.labymod.emote.npc.EmoteNPCPlugin;
 import de.funboyy.labymod.emote.npc.config.Config;
-import de.funboyy.labymod.emote.npc.utils.ItemBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Getter;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
 
 public class EmoteManager {
 
@@ -25,10 +22,10 @@ public class EmoteManager {
         return instance;
     }
 
-    @Getter private final Set<Emote> emotes;
+    @Getter private final List<Emote> emotes;
 
     public EmoteManager() {
-        this.emotes = new HashSet<>();
+        this.emotes = new ArrayList<>();
     }
 
     public void loadEmotes() {
