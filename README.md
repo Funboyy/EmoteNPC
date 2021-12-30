@@ -1,8 +1,12 @@
+## Table of contents
+
 * [LabyMod Emote NPC](#labymod-emote-npc)
   * [config.yml](#configyml)
   * [Commands](#commands)
   * [Permissions](#permissions)
   * [Example Pictures](#example-pictures)
+
+------------
 
 # LabyMod Emote NPC
 
