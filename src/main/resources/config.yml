@@ -36,7 +36,7 @@ messages:
       enabled: "%prefix% &7The NPC now sneaks whenever the player sneaks!"
       disabled: "%prefix% &7The NPC no longer sneaks when the player sneaks!"
   error:
-    labymod: "%prefix% &cYou have to use LabyMod! &o(https://labymod.net/download)"
+    labymod: "%prefix% &cYou have to use LabyMod! &ohttps://labymod.net/download"
     only-player: "%prefix% &cYou have to be a player to execute this command!"
     permission: "%prefix% &cInsufficient permissions!"
   help:
