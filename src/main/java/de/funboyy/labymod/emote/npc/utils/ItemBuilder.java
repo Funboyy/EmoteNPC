@@ -35,7 +35,7 @@ public class ItemBuilder {
             return this;
         }
 
-        if (Versions.getInstance().getVersionId() <= 1121) {
+        if (Versions.getInstance().getId() <= Versions.v1_12_R1) {
             this.item.setDurability((short) 3);
         }
 

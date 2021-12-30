@@ -4,48 +4,11 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.handler.codec.DecoderException;
 import io.netty.handler.codec.EncoderException;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.nio.charset.StandardCharsets;
-import org.bukkit.entity.Player;
 
-public class Protocol {
+public class ProtocolUtils {
 
-    public static void sendMessage(final Player player, final String key, final String messageContent) {
-        try {
-            final byte[] bytes = getBytesToSend(key, messageContent);
-
-            final Constructor<?> serializerConstructor = NMSReflection.getInstance()
-                    .getClass("PacketDataSerializer").getConstructor(ByteBuf.class);
-            final Object serializer = serializerConstructor.newInstance(Unpooled.wrappedBuffer(bytes));
-
-            if (Versions.getInstance().getVersionId() <= 1121) {
-                final Constructor<?> payloadPacketConstructor = NMSReflection.getInstance()
-                        .getClass("PacketPlayOutCustomPayload").getConstructor(String.class, serializer.getClass());
-                final Object payloadPacket = payloadPacketConstructor.newInstance("labymod3:main", serializer);
-
-                NMSReflection.getInstance().sendPacket(player, payloadPacket);
-
-                return;
-            }
-
-            final Constructor<?> minecraftKeyConstructor = NMSReflection.getInstance()
-                    .getClass("MinecraftKey").getConstructor(String.class, String.class);
-            final Object minecraftKey = minecraftKeyConstructor.newInstance("labymod3", "main");
-
-            final Constructor<?> payloadPacketConstructor = NMSReflection.getInstance()
-                    .getClass("PacketPlayOutCustomPayload").getConstructor(minecraftKey.getClass(), serializer.getClass());
-            final Object payloadPacket = payloadPacketConstructor.newInstance(minecraftKey, serializer);
-
-            NMSReflection.getInstance().sendPacket(player, payloadPacket);
-
-        } catch (final NoSuchMethodException | InstantiationException | IllegalAccessException
-                | InvocationTargetException exception) {
-            exception.printStackTrace();
-        }
-    }
-
-    private static byte[] getBytesToSend(final String messageKey, final String messageContents) {
+    public static byte[] getBytesToSend(final String messageKey, final String messageContents) {
         final ByteBuf byteBuf = Unpooled.buffer();
         writeString(byteBuf, messageKey);
         writeString(byteBuf, messageContents);
@@ -66,7 +29,7 @@ public class Protocol {
         byteBuf.writeByte(input);
     }
 
-    public static void writeString(final ByteBuf byteBuf, final String string) {
+    private static void writeString(final ByteBuf byteBuf, final String string) {
         byte[] bytes = string.getBytes(StandardCharsets.UTF_8);
 
         if (bytes.length > Short.MAX_VALUE) {

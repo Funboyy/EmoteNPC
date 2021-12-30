@@ -1,7 +1,7 @@
 package de.funboyy.labymod.emote.npc.listener;
 
 import de.funboyy.labymod.emote.npc.user.UserManager;
-import de.funboyy.labymod.emote.npc.utils.Protocol;
+import de.funboyy.labymod.emote.npc.utils.ProtocolUtils;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import org.bukkit.entity.Player;
@@ -18,8 +18,8 @@ public class PluginMessageListener implements org.bukkit.plugin.messaging.Plugin
         }
 
         final ByteBuf byteBuf = Unpooled.wrappedBuffer(bytes);
-        final String key = Protocol.readString(byteBuf, Short.MAX_VALUE);
-        final String json = Protocol.readString(byteBuf, Short.MAX_VALUE);
+        final String key = ProtocolUtils.readString(byteBuf, Short.MAX_VALUE);
+        final String json = ProtocolUtils.readString(byteBuf, Short.MAX_VALUE);
 
         if (!key.equals("INFO")) {
             return;
