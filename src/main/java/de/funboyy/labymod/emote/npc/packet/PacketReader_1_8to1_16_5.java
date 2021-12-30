@@ -11,16 +11,17 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class PacketReader {
+public class PacketReader_1_8to1_16_5 implements IPacketReader {
 
     private final Player player;
     private final UUID uniqueId;
 
-    public PacketReader(final Player player) {
+    public PacketReader_1_8to1_16_5(final Player player) {
         this.player = player;
         this.uniqueId = UUID.randomUUID();
     }
 
+    @Override
     public void inject() {
         final ChannelDuplexHandler channelDuplexHandler = new ChannelDuplexHandler() {
 
@@ -33,7 +34,7 @@ public class PacketReader {
                     }
 
                     if (NMSReflection.getInstance().getValue(packet, "action").toString().equals("INTERACT")) {
-                        final User user = UserManager.getInstance().getUser(PacketReader.this.player);
+                        final User user = UserManager.getInstance().getUser(PacketReader_1_8to1_16_5.this.player);
 
                         if (user == null || user.getNpc().getEntityId() == null) {
                             super.channelRead(channelHandlerContext, packet);
@@ -52,18 +53,18 @@ public class PacketReader {
                             }
 
                             user.setDelay(System.currentTimeMillis() + 100);
-                            PacketReader.this.player.sendMessage(Config.getInstance().getLabyMod());
+                            PacketReader_1_8to1_16_5.this.player.sendMessage(Config.getInstance().getLabyMod());
                             super.channelRead(channelHandlerContext, packet);
                             return;
                         }
 
                         Bukkit.getScheduler().runTaskLater(EmoteNPCPlugin.getInstance(), () -> {
-                            if (PacketReader.this.player.getOpenInventory().getTitle().equals(Config.getInstance().getInventory())) {
+                            if (PacketReader_1_8to1_16_5.this.player.getOpenInventory().getTitle().equals(Config.getInstance().getInventory())) {
                                 return;
                             }
 
-                            UserManager.getInstance().getUser(PacketReader.this.player).openInventory(1);
-                            PacketReader.this.player.playSound(PacketReader.this.player.getLocation(),
+                            UserManager.getInstance().getUser(PacketReader_1_8to1_16_5.this.player).openInventory(1);
+                            PacketReader_1_8to1_16_5.this.player.playSound(PacketReader_1_8to1_16_5.this.player.getLocation(),
                                     Versions.getInstance().getSound(), 1f, 1f);
                         }, 1);
 
@@ -72,7 +73,7 @@ public class PacketReader {
                     }
 
                     if (NMSReflection.getInstance().getValue(packet, "action").toString().equals("ATTACK")) {
-                        final User user = UserManager.getInstance().getUser(PacketReader.this.player);
+                        final User user = UserManager.getInstance().getUser(PacketReader_1_8to1_16_5.this.player);
 
                         if (user == null || user.getNpc().getEntityId() == null) {
                             super.channelRead(channelHandlerContext, packet);
@@ -103,7 +104,7 @@ public class PacketReader {
 
         };
         final ChannelPipeline pipeline = NMSReflection.getInstance().getChannel(this.player).pipeline();
-        pipeline.addBefore("packet_handler", "EmoteNPC-" + this.uniqueId.toString(), channelDuplexHandler);
+        pipeline.addBefore("packet_handler", "EmoteNPC_1_8to1_16_5-" + this.uniqueId.toString(), channelDuplexHandler);
 
         if (Config.getInstance().debug()) {
             Bukkit.getLogger().info("[" + EmoteNPCPlugin.getInstance().getName() + "] " +
@@ -111,10 +112,11 @@ public class PacketReader {
         }
     }
 
+    @Override
     public void uninject() {
         final Channel channel = NMSReflection.getInstance().getChannel(this.player);
         channel.eventLoop().submit(() -> {
-            channel.pipeline().remove("EmoteNPC-" + this.uniqueId.toString());
+            channel.pipeline().remove("EmoteNPC_1_8to1_16_5-" + this.uniqueId.toString());
             return null;
         });
 

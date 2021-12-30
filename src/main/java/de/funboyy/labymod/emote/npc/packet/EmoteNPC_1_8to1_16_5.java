@@ -16,7 +16,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
-public class EmoteNPC {
+public class EmoteNPC_1_8to1_16_5 implements IEmoteNPC {
 
     private final Player player;
     @Getter private Integer entityId;
@@ -32,7 +32,7 @@ public class EmoteNPC {
 
     @Getter private boolean spawned = false;
 
-    public EmoteNPC(final Player player) {
+    public EmoteNPC_1_8to1_16_5(final Player player) {
         this.player = player;
     }
 
@@ -50,7 +50,7 @@ public class EmoteNPC {
             final Constructor<?> teamConstructor = scoreboardTeam.getConstructor(scoreboard.getClass(), String.class);
             this.team = new NMSObject(teamConstructor.newInstance(scoreboard, "000-NPC"));
 
-            if (Versions.getInstance().getVersionId() <= 1121) {
+            if (Versions.getInstance().getId() <= Versions.v1_12_R1) {
                 this.team.getMethod("setPrefix", String.class).invoke(prefix);
                 this.team.getMethod("setSuffix", String.class).invoke(suffix);
             } else {
@@ -78,6 +78,7 @@ public class EmoteNPC {
         }
     }
 
+    @Override
     public void spawn() {
         try {
             this.spawned = true;
@@ -107,7 +108,7 @@ public class EmoteNPC {
             final Class<?> worldClass = NMSReflection.getInstance().getClass("World");
             final Class<?> interactManagerClass = NMSReflection.getInstance().getClass("PlayerInteractManager");
             final Constructor<?> interactManagerConstructor = interactManagerClass.getConstructor(
-                    Versions.getInstance().getVersionId() <= 1132 ? worldClass : worldServer.getClass());
+                    Versions.getInstance().getId() <= Versions.v1_13_R2 ? worldClass : worldServer.getClass());
             final Object interactManager = interactManagerConstructor.newInstance(worldServer);
 
             final Class<?> minecraftServerClass = NMSReflection.getInstance().getClass("MinecraftServer");
@@ -143,7 +144,7 @@ public class EmoteNPC {
                 NMSReflection.getInstance().setValue(packetPlayOutNamedEntitySpawn, "e", location.getZ());
             }
 
-            if (Versions.getInstance().getVersionId() <= 1141) {
+            if (Versions.getInstance().getId() <= Versions.v1_14_R1) {
                 NMSReflection.getInstance().setValue(packetPlayOutNamedEntitySpawn,
                         Versions.getInstance().isMinecraft18() ? "i" : "h", watcher.getObject());
             }
@@ -184,6 +185,7 @@ public class EmoteNPC {
     }
 
     @SuppressWarnings("all")
+    @Override
     public void remove() {
         try {
             if (this.entityId == null || !this.spawned) {
@@ -216,14 +218,14 @@ public class EmoteNPC {
             final Object packetPlayOutPlayerInfo = NMSReflection.getInstance().getClass("PacketPlayOutPlayerInfo").newInstance();
 
             final Class<?> chatBaseComponentClass = NMSReflection.getInstance().getClass("IChatBaseComponent");
-            final Class<?> enumGameModeClass = NMSReflection.getInstance().getClass(Versions.getInstance().getVersionId()
-                    != 181 && (Versions.getInstance().isMinecraft18() || Versions.getInstance().isMinecraft19())
+            final Class<?> enumGameModeClass = NMSReflection.getInstance().getClass(Versions.getInstance().getId()
+                    != Versions.v1_8_R1 && (Versions.getInstance().isMinecraft18() || Versions.getInstance().isMinecraft19())
                     ? "WorldSettings$EnumGamemode" : "EnumGamemode");
             final Class<?> craftChatMessageClass = NMSReflection.getInstance().getBukkitClass("util.CraftChatMessage");
-            final Class<?> enumPlayerInfoActionClass = NMSReflection.getInstance().getClass(Versions.getInstance().getVersionId()
-                    == 181 ? "EnumPlayerInfoAction" : "PacketPlayOutPlayerInfo$EnumPlayerInfoAction");
-            final Class<?> playerInfoDataClass = NMSReflection.getInstance().getClass(Versions.getInstance().getVersionId()
-                    == 181 ? "PlayerInfoData" : "PacketPlayOutPlayerInfo$PlayerInfoData");
+            final Class<?> enumPlayerInfoActionClass = NMSReflection.getInstance().getClass(Versions.getInstance().getId()
+                    == Versions.v1_8_R1 ? "EnumPlayerInfoAction" : "PacketPlayOutPlayerInfo$EnumPlayerInfoAction");
+            final Class<?> playerInfoDataClass = NMSReflection.getInstance().getClass(Versions.getInstance().getId()
+                    == Versions.v1_8_R1 ? "PlayerInfoData" : "PacketPlayOutPlayerInfo$PlayerInfoData");
 
             final Object enumGameMode = new NMSObject(enumGameModeClass)
                     .getDeclaredMethod("valueOf", String.class).invoke("NOT_SET");
@@ -251,12 +253,13 @@ public class EmoteNPC {
         }
     }
 
+    @Override
     public void headRotation(final float yaw, final float pitch) {
         try {
             final Object headRotationPacket = NMSReflection.getInstance().getClass("PacketPlayOutEntityHeadRotation").newInstance();
 
-            final Class<?> lookPacketClass = NMSReflection.getInstance().getClass(Versions.getInstance().getVersionId()
-                    == 181 ? "PacketPlayOutEntityLook" : "PacketPlayOutEntity$PacketPlayOutEntityLook");
+            final Class<?> lookPacketClass = NMSReflection.getInstance().getClass(Versions.getInstance().getId()
+                    == Versions.v1_8_R1 ? "PacketPlayOutEntityLook" : "PacketPlayOutEntity$PacketPlayOutEntityLook");
             final Constructor<?> lookPacketConstructor = lookPacketClass.getConstructor(int.class, byte.class, byte.class, boolean.class);
             final Object lookPacket = lookPacketConstructor.newInstance(this.entityId, getFixRotation(yaw), getFixRotation(pitch), true);
 
@@ -271,35 +274,11 @@ public class EmoteNPC {
         }
     }
 
+    @Override
     public void sneak(final boolean sneaking) {
         try {
             final Class<?> watcherClass = NMSReflection.getInstance().getClass("DataWatcher");
             final NMSObject watcher = new NMSObject(this.entityPlayer.getMethod("getDataWatcher").invoke());
-
-
-
-            /*final Object playerWatcher = new NMSObject(NMSReflection.getInstance()
-                    .getEntityPlayer(this.player)).getMethod("getDataWatcher").invoke();
-
-            final Map<Integer, Object> entries = (Map<Integer, Object>) NMSReflection.getInstance().getValue(playerWatcher, "entries");
-            final Map<Integer, Object> entries1 = (Map<Integer, Object>) NMSReflection.getInstance().getValue(watcher.getObject(), "entries");
-
-            for (int i = 0; i < 254; i++) {
-                if (entries.containsKey(i)) {
-                    final Object item = entries.get(i);
-                    final Object itemObject = NMSReflection.getInstance().getValue(item, "b");
-                    System.out.println("Player (#" + i + "): " + itemObject + " " + itemObject.getClass());
-                }
-
-                if (entries1.containsKey(i)) {
-                    final Object item = entries.get(i);
-                    final Object itemObject = NMSReflection.getInstance().getValue(item, "b");
-                    System.out.println("NPC (#" + i + "): " + itemObject + " " + itemObject.getClass());
-                }
-            }*/
-
-
-
 
             if (Versions.getInstance().isMinecraft18()) {
                 watcher.getMethod("watch", int.class, Object.class).invoke(0, (byte) (sneaking ? 2 : 0));
@@ -326,7 +305,7 @@ public class EmoteNPC {
                 watcher.getMethod("set", watcherObjectClass, Object.class).invoke(watcherObject1, (float) 20);
                 watcher.getMethod("set", watcherObjectClass, Object.class).invoke(watcherObject2, (byte) 127);
 
-                if (Versions.getInstance().getVersionId() >= 1141) {
+                if (Versions.getInstance().getId() >= Versions.v1_14_R1) {
                     final Object watcherRegistryS = watcherRegistryClass.getField("s").get(watcherRegistryClass);
                     final Object watcherObject3 = watcherObjectConstructor.newInstance(6, watcherRegistryS);
 
@@ -335,7 +314,7 @@ public class EmoteNPC {
                             .getDeclaredMethod("valueOf", String.class).invoke("STANDING");
                     final Object sneakingPose = new NMSObject(entityPoseClass)
                             .getDeclaredMethod("valueOf", String.class).invoke(
-                                    Versions.getInstance().getVersionId() == 1141 ? "SNEAKING" : "CROUCHING");
+                                    Versions.getInstance().getId() == Versions.v1_14_R1 ? "SNEAKING" : "CROUCHING");
 
                     watcher.getMethod("set", watcherObjectClass, Object.class).invoke(watcherObject3, sneaking ? sneakingPose : standingPose);
                 }
