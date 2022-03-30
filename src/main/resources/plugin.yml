@@ -1,7 +1,7 @@
 name: ${project.name}
 version: ${project.version}
 author: ${project.organization.name}
-main: de.funboyy.labymod.emote.npc.EmoteNPCPlugin
+main: ${project.mainClass}
 api-version: 1.13
 
 commands:
