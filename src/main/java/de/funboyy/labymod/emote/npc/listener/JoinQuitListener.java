@@ -12,6 +12,11 @@ public class JoinQuitListener implements Listener {
     @EventHandler
     public void handleJoin(final PlayerJoinEvent event) {
         final User user = UserManager.getInstance().register(event.getPlayer());
+
+        if (!user.isNearNPC()) {
+            return;
+        }
+
         user.getNpc().spawn();
     }
 
