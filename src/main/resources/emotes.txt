@@ -124,3 +124,6 @@
 209 Sweat Wipe
 213 Hokuspokus
 215 The Bat
+216 Slippery ground
+217 Penguin walk
+219 Sinking in the snow
