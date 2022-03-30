@@ -26,8 +26,6 @@ public class NMSReflection {
         return getClassByName("net.minecraft.server." + Versions.getInstance().getVersion() + "." + name);
     }
 
-
-
     public Class<?> getBukkitClass(final String name) {
         return getClassByName("org.bukkit.craftbukkit." + Versions.getInstance().getVersion() + "." + name);
     }
@@ -46,12 +44,13 @@ public class NMSReflection {
         try {
             final NMSObject craftItemStack = new NMSObject(getBukkitClass("inventory.CraftItemStack"));
             final NMSObject nmsItemStack = new NMSObject(craftItemStack.getDeclaredMethod("asNMSCopy", ItemStack.class).invoke(itemStack));
-            final NMSObject component = (boolean) nmsItemStack.getMethod(Versions.getInstance().getId() == Versions.v1_18_R1 ?
-                    "r" : "hasTag").invoke() ? new NMSObject(nmsItemStack.getMethod(
-                            (Versions.getInstance().getId() == Versions.v1_18_R1 ? "s" : "getTag"))
-                    .invoke()) : new NMSObject(getClass("nbt.NBTTagCompound").newInstance());
-            component.getMethod(Versions.getInstance().getId() == Versions.v1_18_R1 ?
-                    "a" : "setString", String.class, String.class).invoke(key, value);
+
+            final boolean isVersion1_18 = Versions.getInstance().getId() == Versions.v1_18_R1;
+            final NMSObject component = (boolean) nmsItemStack.getMethod( isVersion1_18 ? "r" : "hasTag" ).invoke() ?
+                        new NMSObject(nmsItemStack.getMethod( (isVersion1_18 ? "s" : "getTag") ).invoke()) :
+                        new NMSObject(getClass( (Versions.getInstance().hasNewProtocol() ?
+                                "nbt.NBTTagCompound" : "NBTTagCompound") ).newInstance());
+            component.getMethod(isVersion1_18 ? "a" : "setString", String.class, String.class).invoke(key, value);
 
             return (ItemStack) craftItemStack.getDeclaredMethod("asBukkitCopy", getClass(
                     Versions.getInstance().hasNewProtocol() ? "world.item.ItemStack" : "ItemStack"))
