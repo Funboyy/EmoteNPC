@@ -2,7 +2,6 @@ package de.funboyy.labymod.emote.npc.user;
 
 import de.funboyy.labymod.emote.npc.EmoteNPCPlugin;
 import de.funboyy.labymod.emote.npc.config.Config;
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
@@ -38,20 +37,15 @@ public class UserManager {
             return user;
         }
 
-        try {
-            user = new User(player);
-            this.users.add(user);
+        user = new User(player);
+        this.users.add(user);
 
-            if (Config.getInstance().debug()) {
-                Bukkit.getLogger().info("[" + EmoteNPCPlugin.getInstance().getName() + "] " +
-                        "User " + user.getPlayer().getName() + " registered");
-            }
-
-            return user;
-        } catch (final InvocationTargetException | NoSuchMethodException |
-                InstantiationException | IllegalAccessException exception) {
-            throw new RuntimeException(exception.getMessage(), exception.getCause());
+        if (Config.getInstance().debug()) {
+            Bukkit.getLogger().info("[" + EmoteNPCPlugin.getInstance().getName() + "] " +
+                    "User " + user.getPlayer().getName() + " registered");
         }
+
+        return user;
     }
 
     public void update(final Player player, final String version) {

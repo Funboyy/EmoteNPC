@@ -4,13 +4,10 @@ import de.funboyy.labymod.emote.npc.EmoteNPCPlugin;
 import de.funboyy.labymod.emote.npc.config.Config;
 import de.funboyy.labymod.emote.npc.emote.Emote;
 import de.funboyy.labymod.emote.npc.emote.EmoteManager;
-import de.funboyy.labymod.emote.npc.packet.IEmoteNPC;
-import de.funboyy.labymod.emote.npc.packet.IPacketReader;
+import de.funboyy.labymod.emote.npc.packet.EmoteNPC;
+import de.funboyy.labymod.emote.npc.packet.PacketReader;
 import de.funboyy.labymod.emote.npc.utils.ItemBuilder;
-import de.funboyy.labymod.emote.npc.utils.ProtocolUtils;
-import de.funboyy.labymod.emote.npc.utils.Versions;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
+import de.funboyy.labymod.emote.npc.utils.Version;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.Getter;
@@ -25,23 +22,19 @@ import org.json.simple.JSONObject;
 public class User {
 
     @Getter private final Player player;
-    @Getter private final IPacketReader reader;
-    @Getter private final IEmoteNPC npc;
+    @Getter private final PacketReader reader;
+    @Getter private final EmoteNPC npc;
 
     @Getter @Setter private String version;
     @Getter @Setter private long delay = 0L;
 
-    protected User(final Player player) throws NoSuchMethodException,
-            InvocationTargetException, InstantiationException, IllegalAccessException {
+    protected User(final Player player) {
         this.player = player;
 
-        final Constructor<?> readerConstructor = Versions.getInstance().getPacketReader().getConstructor(Player.class);
-        final Constructor<?> npcConstructor = Versions.getInstance().getEmoteNPC().getConstructor(Player.class);
-
-        this.reader = (IPacketReader) readerConstructor.newInstance(this.player);
+        this.reader = new PacketReader(this.player);
         this.reader.inject();
 
-        this.npc = (IEmoteNPC) npcConstructor.newInstance(this.player);
+        this.npc = new EmoteNPC(this.player);
     }
 
     @SuppressWarnings("unchecked")
@@ -114,7 +107,7 @@ public class User {
                                 .replace("%max%", String.valueOf(pages)))
                         .build());
             } else if (i == 39 && page != 1) {
-                inventory.setItem(i, new ItemBuilder(Versions.getInstance().getSkull())
+                inventory.setItem(i, new ItemBuilder(Version.getInstance().getSkull())
                         .name(Config.getInstance().getLastPage())
                         .nbtTag("Event", "lastPage")
                         .nbtTag("Page", String.valueOf(page))
@@ -126,7 +119,7 @@ public class User {
                         .nbtTag("Event", "stopEmote")
                         .build());
             } else if (i == 41 && page < pages) {
-                inventory.setItem(i, new ItemBuilder(Versions.getInstance().getSkull())
+                inventory.setItem(i, new ItemBuilder(Version.getInstance().getSkull())
                         .name(Config.getInstance().getNextPage())
                         .nbtTag("Event", "nextPage")
                         .nbtTag("Page", String.valueOf(page))
