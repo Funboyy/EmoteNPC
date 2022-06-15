@@ -2,6 +2,7 @@ package de.funboyy.labymod.emote.npc.utils;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
+import de.funboyy.labymod.emote.npc.packet.nms.NMSReflection;
 import java.util.UUID;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -31,11 +32,11 @@ public class ItemBuilder {
 
     // only Skull
     public ItemBuilder owner(final String value) {
-        if (this.item.getType() != Versions.getInstance().getSkull()) {
+        if (this.item.getType() != Version.getInstance().getSkull()) {
             return this;
         }
 
-        if (Versions.getInstance().getId() <= Versions.v1_12_R1) {
+        if (Version.getInstance().getId() <= Version.v1_12_R1) {
             this.item.setDurability((short) 3);
         }
 

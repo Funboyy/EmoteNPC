@@ -5,8 +5,8 @@ import de.funboyy.labymod.emote.npc.config.Config;
 import de.funboyy.labymod.emote.npc.emote.EmoteManager;
 import de.funboyy.labymod.emote.npc.user.User;
 import de.funboyy.labymod.emote.npc.user.UserManager;
-import de.funboyy.labymod.emote.npc.utils.NMSReflection;
-import de.funboyy.labymod.emote.npc.utils.Versions;
+import de.funboyy.labymod.emote.npc.packet.nms.NMSReflection;
+import de.funboyy.labymod.emote.npc.utils.Version;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -18,6 +18,7 @@ import org.bukkit.inventory.ItemStack;
 public class InventoryListener implements Listener {
 
     @EventHandler
+    @SuppressWarnings("unused")
     public void onClick(final InventoryClickEvent event) {
         final Player player = (Player) event.getWhoClicked();
         final User user = UserManager.getInstance().getUser(player);
@@ -49,7 +50,7 @@ public class InventoryListener implements Listener {
 
         if (eventNBT.equals("playEmote")) {
             player.closeInventory();
-            player.playSound(player.getLocation(), Versions.getInstance().getSound(), 1, 1);
+            player.playSound(player.getLocation(), Version.getInstance().getSound(), 1, 1);
 
             final String emote = NMSReflection.getInstance().getNBT(item, "EmoteID");
             if (emote == null) {
@@ -69,7 +70,7 @@ public class InventoryListener implements Listener {
         }
 
         if (eventNBT.equals("nextPage")) {
-            player.playSound(player.getLocation(), Versions.getInstance().getSound(), 1, 1);
+            player.playSound(player.getLocation(), Version.getInstance().getSound(), 1, 1);
 
             final String page = NMSReflection.getInstance().getNBT(item, "Page");
             if (page == null) {
@@ -82,7 +83,7 @@ public class InventoryListener implements Listener {
         }
 
         if (eventNBT.equals("lastPage")) {
-            player.playSound(player.getLocation(), Versions.getInstance().getSound(), 1, 1);
+            player.playSound(player.getLocation(), Version.getInstance().getSound(), 1, 1);
 
             final String page = NMSReflection.getInstance().getNBT(item, "Page");
             if (page == null) {
@@ -95,7 +96,7 @@ public class InventoryListener implements Listener {
         }
 
         if (eventNBT.equals("stopEmote")) {
-            player.playSound(player.getLocation(), Versions.getInstance().getSound(), 1, 1);
+            player.playSound(player.getLocation(), Version.getInstance().getSound(), 1, 1);
             user.playEmote(-1);
         }
     }

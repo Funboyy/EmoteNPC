@@ -1,11 +1,11 @@
 package de.funboyy.labymod.emote.npc.utils;
 
-import de.funboyy.labymod.emote.npc.packet.*;
 import lombok.Getter;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 
-public class Versions {
+@SuppressWarnings("unused")
+public class Version {
 
     public static final int v1_8_R1 = 1_8_1;
     public static final int v1_8_R2 = 1_8_2;
@@ -24,24 +24,26 @@ public class Versions {
     public static final int v1_16_R3 = 1_16_3;
     public static final int v1_17_R1 = 1_17_1;
     public static final int v1_18_R1 = 1_18_1;
+    public static final int v1_18_R2 = 1_18_2;
+    public static final int v1_19_R1 = 1_19_1;
 
-    private static Versions instance;
+    private static Version instance;
 
     public static void init(final String version) throws RuntimeException {
         try {
             final int versionId = Integer.parseInt(version.replace("_", "")
                     .replace("R", "").substring(1));
-            if (versionId < v1_8_R1 || versionId > v1_18_R1) {
+            if (versionId < v1_8_R1 || versionId > v1_19_R1) {
                     throw new RuntimeException("Wrong version");
             }
 
-            instance = new Versions(version);
+            instance = new Version(version);
         } catch (final NumberFormatException ignored) {
             throw new RuntimeException("Wrong version");
         }
     }
 
-    public static Versions getInstance() {
+    public static Version getInstance() {
         if (instance == null) {
             throw new RuntimeException("Version was not initialized");
         }
@@ -51,18 +53,10 @@ public class Versions {
     @Getter private final String version;
     @Getter private final int id;
 
-    private Versions(final String version) {
+    private Version(final String version) {
         this.version = version;
         this.id = Integer.parseInt(version.replace("_", "")
                 .replace("R", "").substring(1));
-    }
-
-    public boolean isMinecraft18() {
-        return this.id >= v1_8_R1 && this.id <= v1_8_R3;
-    }
-
-    public boolean isMinecraft19() {
-        return this.id == v1_9_R1 || this.id == v1_9_R2;
     }
 
     public boolean hasNewProtocol() {
@@ -75,11 +69,11 @@ public class Versions {
     }
 
     public Sound getSound() {
-        return isMinecraft18() ? Sound.valueOf("CLICK") : Sound.valueOf("UI_BUTTON_CLICK");
+        return this.id <= v1_8_R3 ? Sound.valueOf("CLICK") : Sound.valueOf("UI_BUTTON_CLICK");
     }
 
     public int getHealth() {
-        if (isMinecraft18() || isMinecraft19()) {
+        if (this.id <= v1_9_R2) {
             return 6;
         }
 
@@ -95,11 +89,11 @@ public class Versions {
     }
 
     public int getSkinOverlay() {
-        if (isMinecraft18()) {
+        if (this.id <= v1_8_R3) {
             return 10;
         }
 
-        if (isMinecraft19()) {
+        if (this.id <= v1_9_R2) {
             return 12;
         }
 
@@ -116,18 +110,6 @@ public class Versions {
         }
 
         return 17;
-    }
-
-    public Class<? extends IEmoteNPC> getEmoteNPC() {
-        return hasNewProtocol() ? EmoteNPC_1_17to1_18_1.class : EmoteNPC_1_8to1_16_5.class;
-    }
-
-    public Class<? extends IPacketReader> getPacketReader() {
-        return hasNewProtocol() ? PacketReader1_17to1_18_1.class : PacketReader_1_8to1_16_5.class;
-    }
-
-    public Class<? extends IProtocol> getProtocol() {
-        return hasNewProtocol() ? Protocol1_17to1_18_1.class : Protocol_1_8to1_16_5.class;
     }
 
 }

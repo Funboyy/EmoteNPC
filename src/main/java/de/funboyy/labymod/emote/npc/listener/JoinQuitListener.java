@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class JoinQuitListener implements Listener {
 
     @EventHandler
+    @SuppressWarnings("unused")
     public void handleJoin(final PlayerJoinEvent event) {
         final User user = UserManager.getInstance().register(event.getPlayer());
 
@@ -21,6 +22,7 @@ public class JoinQuitListener implements Listener {
     }
 
     @EventHandler
+    @SuppressWarnings("unused")
     public void handleQuit(final PlayerQuitEvent event) {
         UserManager.getInstance().unregister(event.getPlayer());
     }
