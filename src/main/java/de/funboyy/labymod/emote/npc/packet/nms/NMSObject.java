@@ -1,4 +1,4 @@
-package de.funboyy.labymod.emote.npc.utils;
+package de.funboyy.labymod.emote.npc.packet.nms;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
