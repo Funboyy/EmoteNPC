@@ -7,10 +7,12 @@ import de.funboyy.labymod.emote.npc.listener.InventoryListener;
 import de.funboyy.labymod.emote.npc.listener.JoinQuitListener;
 import de.funboyy.labymod.emote.npc.listener.MovementListener;
 import de.funboyy.labymod.emote.npc.listener.PluginMessageListener;
-import de.funboyy.labymod.emote.npc.packet.IProtocol;
+import de.funboyy.labymod.emote.npc.packet.Protocol;
+import de.funboyy.labymod.emote.npc.packet.mapping.ClassMapping;
+import de.funboyy.labymod.emote.npc.packet.mapping.MethodMapping;
 import de.funboyy.labymod.emote.npc.user.User;
 import de.funboyy.labymod.emote.npc.user.UserManager;
-import de.funboyy.labymod.emote.npc.utils.Versions;
+import de.funboyy.labymod.emote.npc.utils.Version;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -22,21 +24,25 @@ public class EmoteNPCPlugin extends JavaPlugin {
         return getPlugin(EmoteNPCPlugin.class);
     }
 
-    @Getter private IProtocol protocol;
+    @Getter private Protocol protocol;
+    @Getter private ClassMapping classManager;
+    @Getter private MethodMapping methodManager;
 
     @Override
     public void onEnable() {
         try {
-            Versions.init(getServer().getClass().getPackage().getName().split("\\.")[3]);
+            Version.init(getServer().getClass().getPackage().getName().split("\\.")[3]);
 
-            this.protocol = Versions.getInstance().getProtocol().newInstance();
+            this.classManager = new ClassMapping();
+            this.methodManager = new MethodMapping();
+            this.protocol = new Protocol();
 
             if (Config.getInstance().debug()) {
                 Bukkit.getLogger().info("[" + EmoteNPCPlugin.getInstance().getName() + "] " +
-                        "Setting up for version " + Versions.getInstance().getVersion());
+                        "Setting up for version " + Version.getInstance().getVersion());
             }
-        } catch (final RuntimeException | InstantiationException | IllegalAccessException ignored) {
-            getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.18.1] to use the plugin!");
+        } catch (final RuntimeException ignored) {
+            getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.19] to use the plugin!");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
