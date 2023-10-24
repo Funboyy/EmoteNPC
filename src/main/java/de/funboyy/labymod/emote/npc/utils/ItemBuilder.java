@@ -1,12 +1,14 @@
 package de.funboyy.labymod.emote.npc.utils;
 
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
-import de.funboyy.labymod.emote.npc.packet.nms.NMSReflection;
-import java.util.UUID;
+import de.funboyy.version.helper.Version;
+import de.funboyy.version.helper.custom.data.CustomData;
+import de.funboyy.version.helper.custom.data.CustomItem;
+import de.funboyy.version.helper.custom.data.CustomSkull;
+import java.util.Arrays;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.SkullMeta;
 
 public class ItemBuilder {
 
@@ -23,26 +25,65 @@ public class ItemBuilder {
         return this;
     }
 
+    @SuppressWarnings("UnusedReturnValue")
+    public ItemBuilder lore(final String... lines) {
+        this.meta.setLore(Arrays.asList(lines));
+        return this;
+    }
+
+    public ItemBuilder amount(final int amount) {
+        this.item.setAmount(amount);
+        return this;
+    }
+
     public ItemBuilder nbtTag(final String key, final String value) {
         this.item.setItemMeta(this.meta);
-        this.item = NMSReflection.getInstance().addNBT(this.item, key, value);
+
+        final CustomItem item = CustomItem.fromItem(this.item);
+        CustomData data = item.getData();
+
+        if (data == null) {
+            data = new CustomData();
+        }
+
+        data.setString(key, value);
+        item.setData(data);
+
+        this.item = item.apply(this.item);
+        this.meta = this.item.getItemMeta();
+        return this;
+    }
+
+    public ItemBuilder nbtTag(final String key, final int value) {
+        this.item.setItemMeta(this.meta);
+
+        final CustomItem item = CustomItem.fromItem(this.item);
+        CustomData data = item.getData();
+
+        if (data == null) {
+            data = new CustomData();
+        }
+
+        data.setInt(key, value);
+        item.setData(data);
+
+        this.item = item.apply(this.item);
         this.meta = this.item.getItemMeta();
         return this;
     }
 
     // only Skull
     public ItemBuilder owner(final String value) {
-        if (this.item.getType() != Version.getInstance().getSkull()) {
+        if (this.item.getType() != getSkull()) {
             return this;
         }
 
-        if (Version.getInstance().getId() <= Version.v1_12_R1) {
+        if (Version.getVersionId() <= Version.v1_12_R1) {
             this.item.setDurability((short) 3);
         }
 
-        final GameProfile gameProfile = new GameProfile(UUID.randomUUID(), null);
-        gameProfile.getProperties().put("textures", new Property("textures", value));
-        NMSReflection.getInstance().setValue(this.meta, "profile", gameProfile);
+        final CustomSkull skull = new CustomSkull((SkullMeta) this.meta);
+        skull.setTexture(value);
         return this;
     }
 
@@ -50,4 +91,9 @@ public class ItemBuilder {
         this.item.setItemMeta(this.meta);
         return this.item;
     }
+
+    public static Material getSkull() {
+        return Version.getVersionId() <= Version.v1_12_R1 ? Material.valueOf("SKULL_ITEM") : Material.valueOf("PLAYER_HEAD");
+    }
+
 }

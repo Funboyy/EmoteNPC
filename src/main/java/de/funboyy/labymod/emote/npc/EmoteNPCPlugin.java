@@ -3,48 +3,39 @@ package de.funboyy.labymod.emote.npc;
 import de.funboyy.labymod.emote.npc.command.EmoteCommand;
 import de.funboyy.labymod.emote.npc.config.Config;
 import de.funboyy.labymod.emote.npc.emote.EmoteManager;
-import de.funboyy.labymod.emote.npc.listener.InventoryListener;
 import de.funboyy.labymod.emote.npc.listener.JoinQuitListener;
-import de.funboyy.labymod.emote.npc.listener.MovementListener;
+import de.funboyy.labymod.emote.npc.listener.NPCListener;
 import de.funboyy.labymod.emote.npc.listener.PluginMessageListener;
-import de.funboyy.labymod.emote.npc.packet.Protocol;
-import de.funboyy.labymod.emote.npc.packet.mapping.ClassMapping;
-import de.funboyy.labymod.emote.npc.packet.mapping.MethodMapping;
 import de.funboyy.labymod.emote.npc.user.User;
 import de.funboyy.labymod.emote.npc.user.UserManager;
-import de.funboyy.labymod.emote.npc.utils.Version;
+import de.funboyy.labymod.emote.npc.utils.Protocol;
+import de.funboyy.version.helper.Version;
+import de.funboyy.version.helper.npc.manager.NPCManager;
 import lombok.Getter;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@Getter
 public class EmoteNPCPlugin extends JavaPlugin {
 
     public static EmoteNPCPlugin getInstance() {
         return getPlugin(EmoteNPCPlugin.class);
     }
 
-    @Getter private Protocol protocol;
-    @Getter private ClassMapping classManager;
-    @Getter private MethodMapping methodManager;
+    private NPCManager manager;
 
     @Override
     public void onEnable() {
-        try {
-            Version.init(getServer().getClass().getPackage().getName().split("\\.")[3]);
-
-            this.classManager = new ClassMapping();
-            this.methodManager = new MethodMapping();
-            this.protocol = new Protocol();
-
-            if (Config.getInstance().debug()) {
-                Bukkit.getLogger().info("[" + EmoteNPCPlugin.getInstance().getName() + "] " +
-                        "Setting up for version " + Version.getInstance().getVersion());
-            }
-        } catch (final RuntimeException ignored) {
-            getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.19] to use the plugin!");
+        if (Version.getVersion() == null) {
+            getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.20.2] to use the plugin!");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
+        }
+
+        this.manager = new NPCManager(this);
+
+        if (Config.getInstance().debug()) {
+            getLogger().info("Setting up for version " + Version.getVersion());
         }
 
         loadConfig();
@@ -52,43 +43,31 @@ public class EmoteNPCPlugin extends JavaPlugin {
         EmoteManager.getInstance().loadEmotes();
 
         getServer().getPluginManager().registerEvents(new JoinQuitListener(), this);
-        getServer().getPluginManager().registerEvents(new MovementListener(), this);
-        getServer().getPluginManager().registerEvents(new InventoryListener(), this);
+        getServer().getPluginManager().registerEvents(new NPCListener(), this);
 
         getCommand("emote").setExecutor(new EmoteCommand());
 
-        getServer().getMessenger().registerIncomingPluginChannel(this, "labymod3:main", new PluginMessageListener());
+        getServer().getMessenger().registerIncomingPluginChannel(this, Protocol.LABYMOD_CHANNEL_LEGACY, new PluginMessageListener());
+        getServer().getMessenger().registerIncomingPluginChannel(this, Protocol.LABYMOD_CHANNEL, new PluginMessageListener());
 
-        for (final Player player : Bukkit.getOnlinePlayers()) {
-            UserManager.getInstance().register(player);
-        }
-
-        for (final User user : UserManager.getInstance().getUsers()) {
-            this.protocol.sendBrand(user.getPlayer());
+        Bukkit.getOnlinePlayers().forEach(player -> {
+            final User user = UserManager.getInstance().register(player);
 
             if (user.getNpc().isSpawned()) {
-                continue;
+                return;
             }
 
-            if (!user.isNearNPC()) {
-                continue;
+            if (this.manager.isInRange(user.getPlayer(), user.getNpc())) {
+                Bukkit.getScheduler().runTaskLater(this, () -> user.getNpc().spawn(), 10);
             }
-
-            user.getNpc().spawn();
-        }
+        });
     }
 
     @Override
     public void onDisable() {
-        for (final User user : UserManager.getInstance().getUsers()) {
-            user.getReader().uninject();
+        this.manager.disable();
 
-            if (!user.getNpc().isSpawned()) {
-                continue;
-            }
-
-            user.getNpc().remove();
-        }
+        UserManager.getInstance().getUsers().forEach(user -> UserManager.getInstance().unregister(user));
     }
 
     private void loadConfig() {
@@ -100,20 +79,25 @@ public class EmoteNPCPlugin extends JavaPlugin {
 
     public void updateConfig() {
         loadConfig();
-        respawnNPC();
+        updateSetting();
     }
 
-    public void respawnNPC() {
-        for (final User user : UserManager.getInstance().getUsers()) {
-            if (user.getNpc().isSpawned()) {
-                user.getNpc().remove();
+    public void updateSetting() {
+        Config.getInstance().reload();
+
+        this.manager.getNpcs().forEach(npc -> {
+            npc.getTeam().setPrefix(Config.getInstance().prefix());
+            npc.getTeam().setSuffix(Config.getInstance().suffix());
+
+            if (Config.getInstance().nameColor() != null) {
+                npc.getTeam().setColor(Config.getInstance().nameColor());
             }
 
-            if (!user.isNearNPC()) {
-                continue;
-            }
-
-            user.getNpc().spawn();
-        }
+            npc.setSetting(Config.getInstance().setting());
+            npc.setLocation(Config.getInstance().getLocation());
+            npc.setName(Config.getInstance().name());
+            npc.respawn();
+        });
     }
+
 }

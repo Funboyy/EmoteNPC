@@ -10,20 +10,17 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class JoinQuitListener implements Listener {
 
     @EventHandler
-    @SuppressWarnings("unused")
-    public void handleJoin(final PlayerJoinEvent event) {
-        final User user = UserManager.getInstance().register(event.getPlayer());
-
-        if (!user.isNearNPC()) {
-            return;
-        }
-
-        user.getNpc().spawn();
+    public void onJoin(final PlayerJoinEvent event) {
+        UserManager.getInstance().register(event.getPlayer());
     }
 
     @EventHandler
-    @SuppressWarnings("unused")
-    public void handleQuit(final PlayerQuitEvent event) {
-        UserManager.getInstance().unregister(event.getPlayer());
+    public void onQuit(final PlayerQuitEvent event) {
+        final User user = UserManager.getInstance().getUser(event.getPlayer());
+
+        if (user != null) {
+            UserManager.getInstance().unregister(user);
+        }
     }
+
 }

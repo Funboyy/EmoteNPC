@@ -1,0 +1,2697 @@
+{
+  "emotes": {
+    "5": {
+      "id": 5,
+      "name": "Bow thanks",
+      "attachedTo": "NONE"
+    },
+    "6": {
+      "id": 6,
+      "name": "Hype",
+      "attachedTo": "NONE"
+    },
+    "9": {
+      "id": 9,
+      "name": "Hampelmann",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "2": {
+      "id": 2,
+      "name": "Backflip",
+      "attachedTo": "NONE"
+    },
+    "3": {
+      "id": 3,
+      "name": "Dab",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "4": {
+      "id": 4,
+      "name": "Hello",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "10": {
+      "id": 10,
+      "name": "Keep_your_eyes_closed",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "7": {
+      "id": 7,
+      "name": "Tryingtofly",
+      "attachedTo": "NONE"
+    },
+    "12": {
+      "id": 12,
+      "name": "ymca",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "19": {
+      "id": 19,
+      "name": "Split",
+      "attachedTo": "NONE"
+    },
+    "11": {
+      "id": 11,
+      "name": "Zombie",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "13": {
+      "id": 13,
+      "name": "Hula Hoop",
+      "attachedTo": "NONE"
+    },
+    "14": {
+      "id": 14,
+      "name": "Calling",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "16": {
+      "id": 16,
+      "name": "slowclap",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "17": {
+      "id": 17,
+      "name": "Jubilation",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "15": {
+      "id": 15,
+      "name": "Facepalm",
+      "attachedTo": "NONE"
+    },
+    "18": {
+      "id": 18,
+      "name": "Brush your shoulders",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "20": {
+      "id": 20,
+      "name": "Salute",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "21": {
+      "id": 21,
+      "name": "Winner",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "22": {
+      "id": 22,
+      "name": "Ballerina",
+      "attachedTo": "NONE"
+    },
+    "26": {
+      "id": 26,
+      "name": "Owl",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "23": {
+      "id": 23,
+      "name": "Superman",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "24": {
+      "id": 24,
+      "name": "Yes",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "27": {
+      "id": 27,
+      "name": "type",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "28": {
+      "id": 28,
+      "name": "Waiting",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "25": {
+      "id": 25,
+      "name": "clueless",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "29": {
+      "id": 29,
+      "name": "Mummy",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "30": {
+      "id": 30,
+      "name": "school",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "31": {
+      "id": 31,
+      "name": "Handstand",
+      "attachedTo": "NONE"
+    },
+    "33": {
+      "id": 33,
+      "name": "Holy",
+      "attachedTo": "NONE"
+    },
+    "34": {
+      "id": 34,
+      "name": "Waveover",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "35": {
+      "id": 35,
+      "name": "GTAWinner",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "32": {
+      "id": 32,
+      "name": "Helicopter",
+      "attachedTo": "NONE"
+    },
+    "37": {
+      "id": 37,
+      "name": "Karate",
+      "attachedTo": "NONE"
+    },
+    "38": {
+      "id": 38,
+      "name": "Moonwalk",
+      "attachedTo": "NONE"
+    },
+    "36": {
+      "id": 36,
+      "name": "Deeper deeper",
+      "attachedTo": "NONE"
+    },
+    "39": {
+      "id": 39,
+      "name": "BalanceAct",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "40": {
+      "id": 40,
+      "name": "Freezing",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "42": {
+      "id": 42,
+      "name": "thepassedout",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "43": {
+      "id": 43,
+      "name": "Turtle",
+      "attachedTo": "NONE"
+    },
+    "44": {
+      "id": 44,
+      "name": "the rocker",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "46": {
+      "id": 46,
+      "name": "Infinity Dab",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "47": {
+      "id": 47,
+      "name": "Chicken",
+      "attachedTo": "NONE"
+    },
+    "41": {
+      "id": 41,
+      "name": "Jubilation",
+      "attachedTo": "NONE"
+    },
+    "48": {
+      "id": 48,
+      "name": "double clab",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "45": {
+      "id": 45,
+      "name": "Headspin",
+      "attachedTo": "NONE"
+    },
+    "50": {
+      "id": 50,
+      "name": "The mega thrust",
+      "attachedTo": "NONE"
+    },
+    "51": {
+      "id": 51,
+      "name": "The cleaner",
+      "attachedTo": "NONE"
+    },
+    "52": {
+      "id": 52,
+      "name": "Bridge",
+      "attachedTo": "NONE"
+    },
+    "54": {
+      "id": 54,
+      "name": "Rurik",
+      "attachedTo": "NONE"
+    },
+    "53": {
+      "id": 53,
+      "name": "Milk the cow",
+      "attachedTo": "NONE"
+    },
+    "56": {
+      "id": 56,
+      "name": "hitawheel",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "55": {
+      "id": 55,
+      "name": "Wave",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "57": {
+      "id": 57,
+      "name": "Money rain",
+      "attachedTo": "NONE"
+    },
+    "58": {
+      "id": 58,
+      "name": "drunk",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "60": {
+      "id": 60,
+      "name": "Frightening",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "49": {
+      "id": 49,
+      "name": "The Floss",
+      "attachedTo": "NONE"
+    },
+    "61": {
+      "id": 61,
+      "name": "Sad",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "62": {
+      "id": 62,
+      "name": "Air guitar",
+      "attachedTo": "NONE"
+    },
+    "63": {
+      "id": 63,
+      "name": "Witch",
+      "attachedTo": "NONE"
+    },
+    "59": {
+      "id": 59,
+      "name": "The pointer",
+      "attachedTo": "NONE"
+    },
+    "65": {
+      "id": 65,
+      "name": "hampelman",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "66": {
+      "id": 66,
+      "name": "yes",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "68": {
+      "id": 68,
+      "name": "no",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "67": {
+      "id": 67,
+      "name": "angry",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "69": {
+      "id": 69,
+      "name": "Left",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "70": {
+      "id": 70,
+      "name": "Right",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "71": {
+      "id": 71,
+      "name": "ohicantfly",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "72": {
+      "id": 72,
+      "name": "Air Guitar",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "64": {
+      "id": 64,
+      "name": "thefloss",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "73": {
+      "id": 73,
+      "name": "Headbang",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "74": {
+      "id": 74,
+      "name": "Buuuh",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "75": {
+      "id": 75,
+      "name": "Spitting bars",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "76": {
+      "id": 76,
+      "name": "Count money",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "113": {
+      "id": 113,
+      "name": "Levelup",
+      "attachedTo": "NONE"
+    },
+    "78": {
+      "id": 78,
+      "name": "Applause",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "79": {
+      "id": 79,
+      "name": "Boxing",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "80": {
+      "id": 80,
+      "name": "hug",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "82": {
+      "id": 82,
+      "name": "facepalm",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "83": {
+      "id": 83,
+      "name": "Shoot",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "84": {
+      "id": 84,
+      "name": "The pointing man",
+      "attachedTo": "NONE"
+    },
+    "81": {
+      "id": 81,
+      "name": "pushaway",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "86": {
+      "id": 86,
+      "name": "Near the fall",
+      "attachedTo": "NONE"
+    },
+    "88": {
+      "id": 88,
+      "name": "needtogo",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "85": {
+      "id": 85,
+      "name": "Heart",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "92": {
+      "id": 92,
+      "name": "Praise your item",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "89": {
+      "id": 89,
+      "name": "Waiting",
+      "attachedTo": "NONE"
+    },
+    "90": {
+      "id": 90,
+      "name": "takethel",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "93": {
+      "id": 93,
+      "name": "Look",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "87": {
+      "id": 87,
+      "name": "easy",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "96": {
+      "id": 96,
+      "name": "cmonhitme",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "95": {
+      "id": 95,
+      "name": "clap",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "94": {
+      "id": 94,
+      "name": "hectic yes",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "97": {
+      "id": 97,
+      "name": "I love you",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "98": {
+      "id": 98,
+      "name": "Sarcastic clap",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "91": {
+      "id": 91,
+      "name": "uphere",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "100": {
+      "id": 100,
+      "name": "scraping",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "102": {
+      "id": 102,
+      "name": "down here",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "101": {
+      "id": 101,
+      "name": "You",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "103": {
+      "id": 103,
+      "name": "playboardgames",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "105": {
+      "id": 105,
+      "name": "Head on wall",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "104": {
+      "id": 104,
+      "name": "worm",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "106": {
+      "id": 106,
+      "name": "infinitysit",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "107": {
+      "id": 107,
+      "name": "infinitylaydown",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "109": {
+      "id": 109,
+      "name": "typing",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "108": {
+      "id": 108,
+      "name": "break",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "111": {
+      "id": 111,
+      "name": "superman",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "112": {
+      "id": 112,
+      "name": "Balance",
+      "attachedTo": "NONE"
+    },
+    "110": {
+      "id": 110,
+      "name": "Laughing",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "8": {
+      "id": 8,
+      "name": "Infinity sit",
+      "attachedTo": "NONE"
+    },
+    "77": {
+      "id": 77,
+      "name": "Hug",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "114": {
+      "id": 114,
+      "name": "Take the L",
+      "attachedTo": "NONE"
+    },
+    "115": {
+      "id": 115,
+      "name": "clueless",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "116": {
+      "id": 116,
+      "name": "Therobemovieversion",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "99": {
+      "id": 99,
+      "name": "Therobe",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "117": {
+      "id": 117,
+      "name": "Eagle",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "118": {
+      "id": 118,
+      "name": "soccer",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "119": {
+      "id": 119,
+      "name": "handball",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "120": {
+      "id": 120,
+      "name": "header",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "122": {
+      "id": 122,
+      "name": "Airplane",
+      "attachedTo": "NONE"
+    },
+    "123": {
+      "id": 123,
+      "name": "T-Pose",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "121": {
+      "id": 121,
+      "name": "My idol",
+      "attachedTo": "NONE"
+    },
+    "124": {
+      "id": 124,
+      "name": "Eagle",
+      "attachedTo": "NONE"
+    },
+    "125": {
+      "id": 125,
+      "name": "Ouch",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "126": {
+      "id": 126,
+      "name": "Job well done",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "127": {
+      "id": 127,
+      "name": "crybaby",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "128": {
+      "id": 128,
+      "name": "Elephant",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "129": {
+      "id": 129,
+      "name": "waitingandlisteningtomusic",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "131": {
+      "id": 131,
+      "name": "Eyes on you",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "130": {
+      "id": 130,
+      "name": "Present",
+      "attachedTo": "NONE"
+    },
+    "133": {
+      "id": 133,
+      "name": "Bow down",
+      "attachedTo": "NONE"
+    },
+    "134": {
+      "id": 134,
+      "name": "Maneki-neko",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "132": {
+      "id": 132,
+      "name": "Headnut",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "135": {
+      "id": 135,
+      "name": "Conductor",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "137": {
+      "id": 137,
+      "name": "Snow Angel",
+      "attachedTo": "NONE"
+    },
+    "138": {
+      "id": 138,
+      "name": "Snowball",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "136": {
+      "id": 136,
+      "name": "Didi challenge",
+      "attachedTo": "NONE"
+    },
+    "139": {
+      "id": 139,
+      "name": "Sprinkler",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "140": {
+      "id": 140,
+      "name": "Calculated",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "141": {
+      "id": 141,
+      "name": "One-armed handstand",
+      "attachedTo": "NONE"
+    },
+    "142": {
+      "id": 142,
+      "name": "Eat",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "143": {
+      "id": 143,
+      "name": "Shy",
+      "attachedTo": "NONE"
+    },
+    "144": {
+      "id": 144,
+      "name": "SwimmingOnTheGround",
+      "attachedTo": "NONE"
+    },
+    "148": {
+      "id": 148,
+      "name": "Mindblow",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "150": {
+      "id": 150,
+      "name": "T Pose",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "147": {
+      "id": 147,
+      "name": "Topple",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "149": {
+      "id": 149,
+      "name": "Fall",
+      "attachedTo": "NONE"
+    },
+    "145": {
+      "id": 145,
+      "name": "Sit-Ups",
+      "attachedTo": "NONE"
+    },
+    "151": {
+      "id": 151,
+      "name": "Lazy",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "146": {
+      "id": 146,
+      "name": "Breakdance",
+      "attachedTo": "NONE"
+    },
+    "154": {
+      "id": 154,
+      "name": "Backstroke",
+      "attachedTo": "NONE"
+    },
+    "153": {
+      "id": 153,
+      "name": "Jumping Jack",
+      "attachedTo": "NONE"
+    },
+    "152": {
+      "id": 152,
+      "name": "Stumble",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "155": {
+      "id": 155,
+      "name": "Hohoho",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "157": {
+      "id": 157,
+      "name": "Look at fireworks",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "156": {
+      "id": 156,
+      "name": "Ice-Hockey",
+      "attachedTo": "NONE"
+    },
+    "159": {
+      "id": 159,
+      "name": "Ice-Skating",
+      "attachedTo": "NONE"
+    },
+    "158": {
+      "id": 158,
+      "name": "Finish the tree",
+      "attachedTo": "NONE"
+    },
+    "162": {
+      "id": 162,
+      "name": "Ronaldo",
+      "attachedTo": "NONE"
+    },
+    "160": {
+      "id": 160,
+      "name": "frontroll",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "161": {
+      "id": 161,
+      "name": "Fancy Feet",
+      "attachedTo": "NONE"
+    },
+    "163": {
+      "id": 163,
+      "name": "True Heart",
+      "attachedTo": "NONE"
+    },
+    "164": {
+      "id": 164,
+      "name": "Pumpernickel",
+      "attachedTo": "NONE"
+    },
+    "165": {
+      "id": 165,
+      "name": "Dog",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "167": {
+      "id": 167,
+      "name": "Open present",
+      "attachedTo": "NONE"
+    },
+    "168": {
+      "id": 168,
+      "name": "Snow Angel",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "166": {
+      "id": 166,
+      "name": "Baby Shark",
+      "attachedTo": "NONE"
+    },
+    "170": {
+      "id": 170,
+      "name": "Dj",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "172": {
+      "id": 172,
+      "name": "Slowmo",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "173": {
+      "id": 173,
+      "name": "Sneeze",
+      "attachedTo": "NONE"
+    },
+    "175": {
+      "id": 175,
+      "name": "TitanicPose",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "169": {
+      "id": 169,
+      "name": "Spin",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "176": {
+      "id": 176,
+      "name": "BrotherMustGo",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "181": {
+      "id": 181,
+      "name": "Pati Patu",
+      "attachedTo": "NONE"
+    },
+    "174": {
+      "id": 174,
+      "name": "Test",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "177": {
+      "id": 177,
+      "name": "Taitos_Test",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "178": {
+      "id": 178,
+      "name": "Cheerleader",
+      "attachedTo": "NONE"
+    },
+    "180": {
+      "id": 180,
+      "name": "Naruto Run",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "186": {
+      "id": 186,
+      "name": "InfinityLie",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "179": {
+      "id": 179,
+      "name": "Frontflip",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "185": {
+      "id": 185,
+      "name": "Fusion Right",
+      "attachedTo": "NONE"
+    },
+    "183": {
+      "id": 183,
+      "name": "Fusion Left",
+      "attachedTo": "NONE"
+    },
+    "187": {
+      "id": 187,
+      "name": "Breathless",
+      "attachedTo": "NONE"
+    },
+    "188": {
+      "id": 188,
+      "name": "Throwing Kiss",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "182": {
+      "id": 182,
+      "name": "Axe Swing",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "189": {
+      "id": 189,
+      "name": "Genkidama",
+      "attachedTo": "NONE"
+    },
+    "184": {
+      "id": 184,
+      "name": "Fishing",
+      "attachedTo": "NONE"
+    },
+    "191": {
+      "id": 191,
+      "name": "Singer",
+      "attachedTo": "NONE"
+    },
+    "190": {
+      "id": 190,
+      "name": "To the right",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "171": {
+      "id": 171,
+      "name": "Have to pee",
+      "attachedTo": "NONE"
+    },
+    "192": {
+      "id": 192,
+      "name": "Magikarp",
+      "attachedTo": "NONE"
+    },
+    "194": {
+      "id": 194,
+      "name": "Slap",
+      "attachedTo": "NONE"
+    },
+    "195": {
+      "id": 195,
+      "name": "Air kisses",
+      "attachedTo": "NONE"
+    },
+    "193": {
+      "id": 193,
+      "name": "Rage",
+      "attachedTo": "NONE"
+    },
+    "196": {
+      "id": 196,
+      "name": "Knockout",
+      "attachedTo": "NONE"
+    },
+    "198": {
+      "id": 198,
+      "name": "Jetpack",
+      "attachedTo": "NONE"
+    },
+    "197": {
+      "id": 197,
+      "name": "Matrix",
+      "attachedTo": "NONE"
+    },
+    "199": {
+      "id": 199,
+      "name": "Punching yourself",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "200": {
+      "id": 200,
+      "name": "Golf",
+      "attachedTo": "NONE"
+    },
+    "201": {
+      "id": 201,
+      "name": "Stadium wave",
+      "attachedTo": "NONE"
+    },
+    "202": {
+      "id": 202,
+      "name": "Kickboxer",
+      "attachedTo": "NONE"
+    },
+    "203": {
+      "id": 203,
+      "name": "Handshake",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "204": {
+      "id": 204,
+      "name": "Cleaning the floor",
+      "attachedTo": "NONE"
+    },
+    "205": {
+      "id": 205,
+      "name": "Twerk",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "208": {
+      "id": 208,
+      "name": "Cat paw",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "207": {
+      "id": 207,
+      "name": "Watching the clock left",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "210": {
+      "id": 210,
+      "name": "Watching the clock right",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "206": {
+      "id": 206,
+      "name": "Rolled Dab",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "209": {
+      "id": 209,
+      "name": "Sweat Wipe",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "211": {
+      "id": 211,
+      "name": "Dying",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "212": {
+      "id": 212,
+      "name": "test",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "213": {
+      "id": 213,
+      "name": "Hokuspokus",
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "215": {
+      "id": 215,
+      "name": "The Bat",
+      "attachedTo": "NONE"
+    },
+    "216": {
+      "id": 216,
+      "name": "Slippery ground",
+      "attachedTo": "NONE"
+    },
+    "217": {
+      "id": 217,
+      "name": "Penguin walk",
+      "attachedTo": "NONE"
+    },
+    "219": {
+      "id": 219,
+      "name": "Sinking in the snow",
+      "attachedTo": "NONE"
+    },
+    "218": {
+      "id": 218,
+      "name": "Stop Drop Roll",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "220": {
+      "id": 220,
+      "name": "Stop Drop Roll",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "221": {
+      "id": 221,
+      "name": "Jakobs toller Emote",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "224": {
+      "id": 224,
+      "name": "test",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "225": {
+      "id": 225,
+      "name": "FlipSit",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "226": {
+      "id": 226,
+      "name": "newinfinitysit",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "227": {
+      "id": 227,
+      "name": "Testing",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "228": {
+      "id": 228,
+      "name": "DinaTest",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "229": {
+      "id": 229,
+      "name": "Test",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "230": {
+      "id": 230,
+      "name": "cool",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "231": {
+      "id": 231,
+      "name": "qwdrewq",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "232": {
+      "id": 232,
+      "name": "Head Throw",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "233": {
+      "id": 233,
+      "name": "Shake the bottle",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "234": {
+      "id": 234,
+      "name": "Head Throw",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "235": {
+      "id": 235,
+      "name": "One Hand Shake Bottle",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "236": {
+      "id": 236,
+      "name": "Megamind",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "237": {
+      "id": 237,
+      "name": "discomoves",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "238": {
+      "id": 238,
+      "name": "small",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "239": {
+      "id": 239,
+      "name": "DownyWalk",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "240": {
+      "id": 240,
+      "name": "DownyWalk",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "241": {
+      "id": 241,
+      "name": "Gorilla",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "242": {
+      "id": 242,
+      "name": "Crawl",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "243": {
+      "id": 243,
+      "name": "small",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "244": {
+      "id": 244,
+      "name": "upsidedown",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "245": {
+      "id": 245,
+      "name": "Wide",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "246": {
+      "id": 246,
+      "name": "slim",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "247": {
+      "id": 247,
+      "name": "long",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "248": {
+      "id": 248,
+      "name": "streched",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "249": {
+      "id": 249,
+      "name": "megawide",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "250": {
+      "id": 250,
+      "name": "flip",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "251": {
+      "id": 251,
+      "name": "Morph",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "252": {
+      "id": 252,
+      "name": "Size",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "253": {
+      "id": 253,
+      "name": "wiodee",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "254": {
+      "id": 254,
+      "name": "FlickFlackFront",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "255": {
+      "id": 255,
+      "name": "Lea big",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "256": {
+      "id": 256,
+      "name": "flat",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "257": {
+      "id": 257,
+      "name": "roll",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "258": {
+      "id": 258,
+      "name": "azula",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "259": {
+      "id": 259,
+      "name": "car",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "260": {
+      "id": 260,
+      "name": "Wide",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "261": {
+      "id": 261,
+      "name": "Big",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "262": {
+      "id": 262,
+      "name": "Big",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "263": {
+      "id": 263,
+      "name": "Big",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "264": {
+      "id": 264,
+      "name": "Tiny",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "265": {
+      "id": 265,
+      "name": "boom",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "266": {
+      "id": 266,
+      "name": "Dance",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "267": {
+      "id": 267,
+      "name": "upside down",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "268": {
+      "id": 268,
+      "name": "spin",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "269": {
+      "id": 269,
+      "name": "Slim",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "270": {
+      "id": 270,
+      "name": "test",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "271": {
+      "id": 271,
+      "name": "scale",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "272": {
+      "id": 272,
+      "name": "Superman",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "273": {
+      "id": 273,
+      "name": "",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "274": {
+      "id": 274,
+      "name": "abc",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "275": {
+      "id": 275,
+      "name": "juliarnTest",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "abortActions": [
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "276": {
+      "id": 276,
+      "name": "Tam Dance",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "277": {
+      "id": 277,
+      "name": "tam dance",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "278": {
+      "id": 278,
+      "name": "Griddy",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION"
+      ],
+      "attachedTo": "NONE"
+    },
+    "279": {
+      "id": 279,
+      "name": "Sven Test Emote",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "280": {
+      "id": 280,
+      "name": "Split",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "281": {
+      "id": 281,
+      "name": "Spyglass",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "282": {
+      "id": 282,
+      "name": "Gaming Chair Sit",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "283": {
+      "id": 283,
+      "name": "UwU Gaming Chair Sit",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "284": {
+      "id": 284,
+      "name": "ich reite biene",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "abortActions": [
+        "SNEAKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "285": {
+      "id": 285,
+      "name": "Magic Broom",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "286": {
+      "id": 286,
+      "name": "Explode",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "287": {
+      "id": 287,
+      "name": "Ball",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "288": {
+      "id": 288,
+      "name": "egg hide",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "289": {
+      "id": 289,
+      "name": "Frozen",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "290": {
+      "id": 290,
+      "name": "Snowman",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "abortActions": [
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "291": {
+      "id": 291,
+      "name": "Meteor Strike",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "292": {
+      "id": 292,
+      "name": "Meteor",
+      "draft": true,
+      "props": true,
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION"
+      ],
+      "attachedTo": "NONE"
+    },
+    "293": {
+      "id": 293,
+      "name": "Kiss",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "294": {
+      "id": 294,
+      "name": "Hammock",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "295": {
+      "id": 295,
+      "name": "A Baked Bean",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "SPRINTING",
+        "SNEAKING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "296": {
+      "id": 296,
+      "name": "Lunar",
+      "draft": true,
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "298": {
+      "id": 298,
+      "name": "Watering",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "299": {
+      "id": 299,
+      "name": "Fire Bender",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "100",
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "300": {
+      "id": 300,
+      "name": "Present for you",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "301": {
+      "id": 301,
+      "name": "Raincloud",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SNEAKING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "20",
+      "abortActions": [
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "302": {
+      "id": 302,
+      "name": "Lantern flight",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "303": {
+      "id": 303,
+      "name": "Pogo Jump",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "304": {
+      "id": 304,
+      "name": "Hoverboard",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "305": {
+      "id": 305,
+      "name": "pray",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "306": {
+      "id": 306,
+      "name": "Flag Wave",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "307": {
+      "id": 307,
+      "name": "Surfboard",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "308": {
+      "id": 308,
+      "name": "Sunbed",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "309": {
+      "id": 309,
+      "name": "Water Gun",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "ARM"
+    },
+    "310": {
+      "id": 310,
+      "name": "Hula Hoop",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "311": {
+      "id": 311,
+      "name": "Ukulele",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "ARM"
+    },
+    "312": {
+      "id": 312,
+      "name": "Ice Cream",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "ARM"
+    },
+    "313": {
+      "id": 313,
+      "name": "Ice Eater",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "attachedTo": "NONE"
+    },
+    "314": {
+      "id": 314,
+      "name": "Magic Trick",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "abortActions": [
+        "SNEAKING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "315": {
+      "id": 315,
+      "name": "maroistinkompetent",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "316": {
+      "id": 316,
+      "name": "Fireball",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "textureRatio": {
+        "width": "30",
+        "height": "17"
+      },
+      "textureAnimationDelay": "50",
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "317": {
+      "id": 317,
+      "name": "Purple Susanoo",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "318": {
+      "id": 318,
+      "name": "Levitating",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SPRINTING",
+        "SNEAKING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "319": {
+      "id": 319,
+      "name": "Dinnerbone",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "320": {
+      "id": 320,
+      "name": "Red Susanoo",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "321": {
+      "id": 321,
+      "name": "Blue Susanoo",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "322": {
+      "id": 322,
+      "name": "Green Susanoo",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "323": {
+      "id": 323,
+      "name": "Cyan Susanoo",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "324": {
+      "id": 324,
+      "name": "Running",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "325": {
+      "id": 325,
+      "name": "Head Off",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "326": {
+      "id": 326,
+      "name": "Two-Dimensional",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "abortActions": [
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "328": {
+      "id": 328,
+      "name": "Possessed",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "329": {
+      "id": 329,
+      "name": "Werewolf Walk",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION"
+      ],
+      "attachedTo": "NONE"
+    },
+    "330": {
+      "id": 330,
+      "name": "Killer Chase",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "ARM"
+    }
+  }
+}

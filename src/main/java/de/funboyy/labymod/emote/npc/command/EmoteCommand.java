@@ -86,7 +86,8 @@ public class EmoteCommand implements CommandExecutor {
         config.set("npc.pitch", player.getLocation().getPitch());
 
         EmoteNPCPlugin.getInstance().saveConfig();
-        EmoteNPCPlugin.getInstance().respawnNPC();
+        EmoteNPCPlugin.getInstance().updateSetting();
+
         player.sendMessage(Config.getInstance().getSetLocation());
     }
 
@@ -96,11 +97,11 @@ public class EmoteCommand implements CommandExecutor {
             return;
         }
 
-        final boolean lookClose = Config.getInstance().lookClose();
+        final boolean lookClose = Config.getInstance().setting().lookClose();
 
         EmoteNPCPlugin.getInstance().getConfig().set("settings.look-close", !lookClose);
         EmoteNPCPlugin.getInstance().saveConfig();
-        EmoteNPCPlugin.getInstance().respawnNPC();
+        EmoteNPCPlugin.getInstance().updateSetting();
 
         sender.sendMessage(!lookClose ?
                 Config.getInstance().getToggleLookCloseEnabled() : Config.getInstance().getToggleLookCloseDisabled());
@@ -112,11 +113,11 @@ public class EmoteCommand implements CommandExecutor {
             return;
         }
 
-        final boolean sneaking = Config.getInstance().sneak();
+        final boolean sneaking = Config.getInstance().setting().toggleSneak();
 
         EmoteNPCPlugin.getInstance().getConfig().set("settings.sneak", !sneaking);
         EmoteNPCPlugin.getInstance().saveConfig();
-        EmoteNPCPlugin.getInstance().respawnNPC();
+        EmoteNPCPlugin.getInstance().updateSetting();
 
         sender.sendMessage(!sneaking ?
                 Config.getInstance().getToggleSneakEnabled() : Config.getInstance().getToggleSneakDisabled());

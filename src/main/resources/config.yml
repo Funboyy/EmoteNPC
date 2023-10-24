@@ -14,7 +14,8 @@ settings:
 npc:
   name:
     prefix: ""
-    name: "&bEmotes"
+    name: "Emotes"
+    nameColor: "&b"
     suffix: ""
   world: "world"
   x: 0.5
@@ -22,6 +23,7 @@ npc:
   z: 0.5
   yaw: 0.0
   pitch: 0.0
+  labymod4-only: "&8only with LabyMod 4"
 
 messages:
   play-emote: "%prefix% &7The &e%emote% Emote &7will now be played!"
@@ -36,7 +38,7 @@ messages:
       enabled: "%prefix% &7The NPC now sneaks whenever the player sneaks!"
       disabled: "%prefix% &7The NPC no longer sneaks when the player sneaks!"
   error:
-    labymod: "%prefix% &cYou have to use LabyMod! &ohttps://labymod.net/download"
+    labymod: "%prefix% &cYou have to use LabyMod! &o(https://labymod.net/download&o)"
     only-player: "%prefix% &cYou have to be a player to execute this command!"
     permission: "%prefix% &cInsufficient permissions!"
   help:

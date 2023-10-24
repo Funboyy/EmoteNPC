@@ -1,149 +1,172 @@
 package de.funboyy.labymod.emote.npc.config;
 
 import de.funboyy.labymod.emote.npc.EmoteNPCPlugin;
+import de.funboyy.version.helper.npc.Setting;
+import lombok.AllArgsConstructor;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 
+@AllArgsConstructor
 public class Config {
 
     private static Config instance;
 
     public static Config getInstance() {
         if (instance == null) {
-            instance = new Config();
+            instance = new Config(EmoteNPCPlugin.getInstance().getConfig());
         }
         return instance;
     }
+    
+    private FileConfiguration config;
+    
+    public void reload() {
+        this.config = EmoteNPCPlugin.getInstance().getConfig();
+    }
 
     private String replace(final String message) {
+        if (message == null) {
+            return "";
+        }
+
         return ChatColor.translateAlternateColorCodes('&', message.replace("%prefix%", getPrefix()));
     }
 
     private String getPrefix() {
-        return EmoteNPCPlugin.getInstance().getConfig().getString("prefix");
+        return this.config.getString("prefix");
     }
 
     // Settings
 
     public String prefix() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("npc.name.prefix"));
+        return replace(this.config.getString("npc.name.prefix"));
     }
 
     public String name() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("npc.name.name"));
+        return replace(this.config.getString("npc.name.name"));
+    }
+
+    public ChatColor nameColor() {
+        final String value = replace(this.config.getString("npc.name.nameColor"));
+
+        if (value.charAt(0) != ChatColor.COLOR_CHAR || value.length() != 2) {
+            return null;
+        }
+
+        return ChatColor.getByChar(value.toLowerCase().charAt(1));
     }
 
     public String suffix() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("npc.name.suffix"));
+        return replace(this.config.getString("npc.name.suffix"));
     }
-
-    public boolean lookClose() {
-        return EmoteNPCPlugin.getInstance().getConfig().getBoolean("settings.look-close");
-    }
-
-    public boolean sneak() {
-        return EmoteNPCPlugin.getInstance().getConfig().getBoolean("settings.sneak");
+    
+    public Setting setting() {
+        return new Setting(this.config.getBoolean("settings.sneak"), this.config.getBoolean("settings.look-close"));
     }
 
     public Location getLocation() {
-        final FileConfiguration config = EmoteNPCPlugin.getInstance().getConfig();
-        final World world = Bukkit.getWorld(config.getString("npc.world"));
-        final double x = config.getDouble("npc.x");
-        final double y = config.getDouble("npc.y");
-        final double z = config.getDouble("npc.z");
-        final float yaw = (float) config.getDouble("npc.yaw");
-        final float pitch = (float) config.getDouble("npc.pitch");
+        final String name = this.config.getString("npc.world");
+        final World world = name == null? Bukkit.getWorlds().get(0) : Bukkit.getWorld(name);
+        final double x = this.config.getDouble("npc.x");
+        final double y = this.config.getDouble("npc.y");
+        final double z = this.config.getDouble("npc.z");
+        final float yaw = (float) this.config.getDouble("npc.yaw");
+        final float pitch = (float) this.config.getDouble("npc.pitch");
 
         return new Location(world, x, y, z, yaw, pitch);
+    }
+
+    public String getLabyMod4Only() {
+        return replace(this.config.getString("npc.labymod4-only"));
     }
 
     // Inventory
 
     public String getInventory() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("inventory.title"));
+        return replace(this.config.getString("inventory.title"));
     }
 
     public String getPage() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("inventory.pages"));
+        return replace(this.config.getString("inventory.pages"));
     }
 
     public String getNextPage() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("inventory.next-page"));
+        return replace(this.config.getString("inventory.next-page"));
     }
 
     public String getLastPage() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("inventory.last-page"));
+        return replace(this.config.getString("inventory.last-page"));
     }
 
     public String getStopEmote() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("inventory.stop-emote"));
+        return replace(this.config.getString("inventory.stop-emote"));
     }
 
     // Messages
 
     public String getPlayEmote() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.play-emote"));
+        return replace(this.config.getString("messages.play-emote"));
     }
 
     public String getReload() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.reload"));
+        return replace(this.config.getString("messages.reload"));
     }
 
     public String getSetLocation() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.set.location"));
+        return replace(this.config.getString("messages.set.location"));
     }
 
     public String getToggleLookCloseEnabled() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.toggle.look-close.enabled"));
+        return replace(this.config.getString("messages.toggle.look-close.enabled"));
     }
 
     public String getToggleLookCloseDisabled() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.toggle.look-close.disabled"));
+        return replace(this.config.getString("messages.toggle.look-close.disabled"));
     }
 
     public String getToggleSneakEnabled() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.toggle.sneak.enabled"));
+        return replace(this.config.getString("messages.toggle.sneak.enabled"));
     }
 
     public String getToggleSneakDisabled() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.toggle.sneak.disabled"));
+        return replace(this.config.getString("messages.toggle.sneak.disabled"));
     }
 
     public String getLabyMod() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.error.labymod"));
+        return replace(this.config.getString("messages.error.labymod"));
     }
 
     public String getOnlyPlayer() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.error.only-player"));
+        return replace(this.config.getString("messages.error.only-player"));
     }
 
     public String getPermission() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.error.permission"));
+        return replace(this.config.getString("messages.error.permission"));
     }
 
     public String getHelpSetLocation() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.help.set.location"));
+        return replace(this.config.getString("messages.help.set.location"));
     }
 
     public String getHelpToggleLookClose() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.help.toggle.look-close"));
+        return replace(this.config.getString("messages.help.toggle.look-close"));
     }
 
     public String getHelpToggleSneak() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.help.toggle.sneak"));
+        return replace(this.config.getString("messages.help.toggle.sneak"));
     }
 
     public String getHelpReload() {
-        return replace(EmoteNPCPlugin.getInstance().getConfig().getString("messages.help.reload"));
+        return replace(this.config.getString("messages.help.reload"));
     }
 
     // Debug
 
     public boolean debug() {
-        return EmoteNPCPlugin.getInstance().getConfig().getBoolean("debug");
+        return this.config.getBoolean("debug");
     }
 
 }

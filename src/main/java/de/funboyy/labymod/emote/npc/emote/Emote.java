@@ -1,15 +1,15 @@
 package de.funboyy.labymod.emote.npc.emote;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+@Getter
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
 public class Emote {
 
-    @Getter private final String name;
-    @Getter private final int id;
-
-    protected Emote(final String name, final int id) {
-        this.name = name;
-        this.id = id;
-    }
+    private final String name;
+    private final int id;
+    private final boolean draft;
 
 }

@@ -5,9 +5,9 @@ import de.funboyy.labymod.emote.npc.config.Config;
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Getter;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+@Getter
 public class UserManager {
 
     private static UserManager instance;
@@ -19,7 +19,7 @@ public class UserManager {
         return instance;
     }
 
-    @Getter private final Set<User> users;
+    private final Set<User> users;
 
     public UserManager() {
         this.users = new HashSet<>();
@@ -41,8 +41,7 @@ public class UserManager {
         this.users.add(user);
 
         if (Config.getInstance().debug()) {
-            Bukkit.getLogger().info("[" + EmoteNPCPlugin.getInstance().getName() + "] " +
-                    "User " + user.getPlayer().getName() + " registered");
+            EmoteNPCPlugin.getInstance().getLogger().info("User " + user.getPlayer().getName() + " registered");
         }
 
         return user;
@@ -56,26 +55,18 @@ public class UserManager {
         }
 
         user.setVersion(version);
+        user.setLegacy(version.startsWith("3"));
 
         if (Config.getInstance().debug()) {
-            Bukkit.getLogger().info("[" + EmoteNPCPlugin.getInstance().getName() + "] " +
-                    "Update version of " + user.getPlayer().getName() + " to " + version);
+            EmoteNPCPlugin.getInstance().getLogger().info("Update version of " + user.getPlayer().getName() + " to " + version);
         }
     }
 
-    public void unregister(final Player player) {
-        final User user = getUser(player);
-
-        if (user == null) {
-            return;
-        }
-
-        user.getReader().uninject();
+    public void unregister(final User user) {
         this.users.remove(user);
 
         if (Config.getInstance().debug()) {
-            Bukkit.getLogger().info("[" + EmoteNPCPlugin.getInstance().getName() + "] " +
-                    "User " + user.getPlayer().getName() + " unregistered");
+            EmoteNPCPlugin.getInstance().getLogger().info("User " + user.getPlayer().getName() + " unregistered");
         }
     }
 }
