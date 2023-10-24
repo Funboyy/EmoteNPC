@@ -31,7 +31,8 @@ settings:
 npc:
   name:
     prefix: ""
-    name: "&bEmotes"
+    name: "Emotes"
+    nameColor: "&b"
     suffix: ""
   world: "world"
   x: 0.5
@@ -39,6 +40,7 @@ npc:
   z: 0.5
   yaw: 0.0
   pitch: 0.0
+  labymod4-only: "&8only with LabyMod 4"
 
 messages:
   play-emote: "%prefix% &7The &e%emote% Emote &7will now be played!"
