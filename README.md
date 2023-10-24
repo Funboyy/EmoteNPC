@@ -31,7 +31,7 @@ settings:
 npc:
   name:
     prefix: ""
-    name: "Emotes"
+    name: "&bEmotes"
     nameColor: "&b"
     suffix: ""
   world: "world"
