@@ -39,6 +39,7 @@ public class PluginMessageListener implements org.bukkit.plugin.messaging.Plugin
         }
 
         final String json = data.readString(Short.MAX_VALUE);
+        @SuppressWarnings("deprecation")
         final JsonElement element = new JsonParser().parse(json).getAsJsonObject();
 
         if (!element.isJsonObject()) {
