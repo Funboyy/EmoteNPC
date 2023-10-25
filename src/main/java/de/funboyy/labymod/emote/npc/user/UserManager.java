@@ -40,7 +40,7 @@ public class UserManager {
         user = new User(player);
         this.users.add(user);
 
-        if (Config.getInstance().debug()) {
+        if (Config.DEBUG.get()) {
             EmoteNPCPlugin.getInstance().getLogger().info("User " + user.getPlayer().getName() + " registered");
         }
 
@@ -57,7 +57,7 @@ public class UserManager {
         user.setVersion(version);
         user.setLegacy(version.startsWith("3"));
 
-        if (Config.getInstance().debug()) {
+        if (Config.DEBUG.get()) {
             EmoteNPCPlugin.getInstance().getLogger().info("Update version of " + user.getPlayer().getName() + " to " + version);
         }
     }
@@ -65,7 +65,7 @@ public class UserManager {
     public void unregister(final User user) {
         this.users.remove(user);
 
-        if (Config.getInstance().debug()) {
+        if (Config.DEBUG.get()) {
             EmoteNPCPlugin.getInstance().getLogger().info("User " + user.getPlayer().getName() + " unregistered");
         }
     }

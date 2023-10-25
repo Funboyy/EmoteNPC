@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import lombok.Getter;
 
@@ -70,7 +72,7 @@ public class EmoteManager {
                 .filter(emote -> emote.getName() != null)
                 .collect(Collectors.toList()));
 
-        if (Config.getInstance().debug()) {
+        if (Config.DEBUG.get()) {
             EmoteNPCPlugin.getInstance().getLogger().info(this.emotes.stream()
                     .filter(emote -> !emote.isDraft()).count() + " Emotes were registered");
         }

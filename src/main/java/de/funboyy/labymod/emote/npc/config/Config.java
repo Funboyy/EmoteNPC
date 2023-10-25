@@ -1,172 +1,77 @@
 package de.funboyy.labymod.emote.npc.config;
 
 import de.funboyy.labymod.emote.npc.EmoteNPCPlugin;
-import de.funboyy.version.helper.npc.Setting;
-import lombok.AllArgsConstructor;
+import de.funboyy.labymod.emote.npc.config.element.*;
 import net.md_5.bungee.api.ChatColor;
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.Plugin;
 
-@AllArgsConstructor
 public class Config {
 
-    private static Config instance;
+    public static final ConfigString PREFIX = new ConfigString("prefix");
 
-    public static Config getInstance() {
-        if (instance == null) {
-            instance = new Config(EmoteNPCPlugin.getInstance().getConfig());
-        }
-        return instance;
-    }
-    
-    private FileConfiguration config;
-    
-    public void reload() {
-        this.config = EmoteNPCPlugin.getInstance().getConfig();
-    }
+    public static final ConfigString NPC_NAME = new ConfigString("npc.name");
+    public static final ConfigLocation NPC_LOCATION = new ConfigLocation("npc.location.%s");
+    public static final ConfigSettings NPC_SETTINGS = new ConfigSettings("npc.settings.%s");
 
-    private String replace(final String message) {
-        if (message == null) {
-            return "";
-        }
+    public static final ConfigString SCOREBOARD_PREFIX = new ConfigString("npc.scoreboard.prefix");
+    public static final ConfigColor SCOREBOARD_COLOR = new ConfigColor("npc.scoreboard.color");
+    public static final ConfigString SCOREBOARD_SUFFIX = new ConfigString("npc.scoreboard.suffix");
 
-        return ChatColor.translateAlternateColorCodes('&', message.replace("%prefix%", getPrefix()));
-    }
+    public static final ConfigString INVENTORY_TITLE = new ConfigString("inventory.title");
+    public static final ConfigString ITEM_PAGES = new ConfigString("inventory.item.pages");
+    public static final ConfigString ITEM_STOP_EMOTE = new ConfigString("inventory.item.stopEmote");
+    public static final ConfigString ITEM_PREVIOUS_PAGE = new ConfigString("inventory.item.previousPage");
+    public static final ConfigString ITEM_NEXT_PAGE = new ConfigString("inventory.item.nextPage");
+    public static final ConfigString ITEM_WARNING = new ConfigString("inventory.item.labyMod4Only");
 
-    private String getPrefix() {
-        return this.config.getString("prefix");
-    }
+    public static final ConfigMessage COMMAND_PERMISSION = new ConfigMessage("command.permission");
+    public static final ConfigMessage COMMAND_ONLY_PLAYER = new ConfigMessage("command.onlyPlayer");
+    public static final ConfigMessage COMMAND_RELOAD = new ConfigMessage("command.reload");
+    public static final ConfigMessage COMMAND_SET_LOCATION = new ConfigMessage("command.set.location");
+    public static final ConfigToggleMessage COMMAND_TOGGLE_SNEAK = new ConfigToggleMessage("command.toggle.sneak.%s",
+            () -> NPC_SETTINGS.get().toggleSneak());
+    public static final ConfigToggleMessage COMMAND_TOGGLE_LOOK_CLOSE = new ConfigToggleMessage("command.toggle.lookClose.%s",
+            () -> NPC_SETTINGS.get().lookClose());
+    public static final ConfigMessageList COMMAND_HELP = new ConfigMessageList("command.help");
 
-    // Settings
+    public static final ConfigMessage MESSAGE_PLAY_EMOTE = new ConfigMessage("message.playEmote");
+    public static final ConfigMessage MESSAGE_REQUIRES_LABYMOD = new ConfigMessage("message.requiresLabyMod");
 
-    public String prefix() {
-        return replace(this.config.getString("npc.name.prefix"));
-    }
+    public static final ConfigBoolean DEBUG = new ConfigBoolean("debug");
 
-    public String name() {
-        return replace(this.config.getString("npc.name.name"));
-    }
-
-    public ChatColor nameColor() {
-        final String value = replace(this.config.getString("npc.name.nameColor"));
-
-        if (value.charAt(0) != ChatColor.COLOR_CHAR || value.length() != 2) {
-            return null;
-        }
-
-        return ChatColor.getByChar(value.toLowerCase().charAt(1));
+    public static FileConfiguration getFile() {
+        return EmoteNPCPlugin.getInstance().getConfig();
     }
 
-    public String suffix() {
-        return replace(this.config.getString("npc.name.suffix"));
-    }
-    
-    public Setting setting() {
-        return new Setting(this.config.getBoolean("settings.sneak"), this.config.getBoolean("settings.look-close"));
-    }
+    public static void load() {
+        final Plugin plugin = EmoteNPCPlugin.getInstance();
 
-    public Location getLocation() {
-        final String name = this.config.getString("npc.world");
-        final World world = name == null? Bukkit.getWorlds().get(0) : Bukkit.getWorld(name);
-        final double x = this.config.getDouble("npc.x");
-        final double y = this.config.getDouble("npc.y");
-        final double z = this.config.getDouble("npc.z");
-        final float yaw = (float) this.config.getDouble("npc.yaw");
-        final float pitch = (float) this.config.getDouble("npc.pitch");
+        plugin.saveDefaultConfig();
 
-        return new Location(world, x, y, z, yaw, pitch);
+        plugin.getConfig().options().copyDefaults(true);
+        plugin.reloadConfig();
     }
 
-    public String getLabyMod4Only() {
-        return replace(this.config.getString("npc.labymod4-only"));
+    public static void update() {
+        EmoteNPCPlugin.getInstance().getManager().getNpcs().forEach(npc -> {
+            npc.getTeam().setPrefix(SCOREBOARD_PREFIX.get());
+            npc.getTeam().setSuffix(SCOREBOARD_SUFFIX.get());
+
+            final ChatColor color = SCOREBOARD_COLOR.get();
+            if (color != null) {
+                npc.getTeam().setColor(color);
+            }
+
+            npc.setSettings(NPC_SETTINGS.get());
+            npc.setLocation(NPC_LOCATION.get());
+            npc.setName(NPC_NAME.get());
+            npc.respawn();
+        });
     }
 
-    // Inventory
-
-    public String getInventory() {
-        return replace(this.config.getString("inventory.title"));
-    }
-
-    public String getPage() {
-        return replace(this.config.getString("inventory.pages"));
-    }
-
-    public String getNextPage() {
-        return replace(this.config.getString("inventory.next-page"));
-    }
-
-    public String getLastPage() {
-        return replace(this.config.getString("inventory.last-page"));
-    }
-
-    public String getStopEmote() {
-        return replace(this.config.getString("inventory.stop-emote"));
-    }
-
-    // Messages
-
-    public String getPlayEmote() {
-        return replace(this.config.getString("messages.play-emote"));
-    }
-
-    public String getReload() {
-        return replace(this.config.getString("messages.reload"));
-    }
-
-    public String getSetLocation() {
-        return replace(this.config.getString("messages.set.location"));
-    }
-
-    public String getToggleLookCloseEnabled() {
-        return replace(this.config.getString("messages.toggle.look-close.enabled"));
-    }
-
-    public String getToggleLookCloseDisabled() {
-        return replace(this.config.getString("messages.toggle.look-close.disabled"));
-    }
-
-    public String getToggleSneakEnabled() {
-        return replace(this.config.getString("messages.toggle.sneak.enabled"));
-    }
-
-    public String getToggleSneakDisabled() {
-        return replace(this.config.getString("messages.toggle.sneak.disabled"));
-    }
-
-    public String getLabyMod() {
-        return replace(this.config.getString("messages.error.labymod"));
-    }
-
-    public String getOnlyPlayer() {
-        return replace(this.config.getString("messages.error.only-player"));
-    }
-
-    public String getPermission() {
-        return replace(this.config.getString("messages.error.permission"));
-    }
-
-    public String getHelpSetLocation() {
-        return replace(this.config.getString("messages.help.set.location"));
-    }
-
-    public String getHelpToggleLookClose() {
-        return replace(this.config.getString("messages.help.toggle.look-close"));
-    }
-
-    public String getHelpToggleSneak() {
-        return replace(this.config.getString("messages.help.toggle.sneak"));
-    }
-
-    public String getHelpReload() {
-        return replace(this.config.getString("messages.help.reload"));
-    }
-
-    // Debug
-
-    public boolean debug() {
-        return this.config.getBoolean("debug");
+    public static void save() {
+        EmoteNPCPlugin.getInstance().saveConfig();
     }
 
 }
