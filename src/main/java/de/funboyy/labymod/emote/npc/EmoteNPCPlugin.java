@@ -34,11 +34,11 @@ public class EmoteNPCPlugin extends JavaPlugin {
 
         this.manager = new NPCManager(this);
 
-        if (Config.getInstance().debug()) {
+        if (Config.DEBUG.get()) {
             getLogger().info("Setting up for version " + Version.getVersion());
         }
 
-        loadConfig();
+        Config.load();
 
         EmoteManager.getInstance().loadEmotes();
 
@@ -68,36 +68,6 @@ public class EmoteNPCPlugin extends JavaPlugin {
         this.manager.disable();
 
         UserManager.getInstance().getUsers().forEach(user -> UserManager.getInstance().unregister(user));
-    }
-
-    private void loadConfig() {
-        this.saveDefaultConfig();
-
-        this.getConfig().options().copyDefaults(true);
-        this.reloadConfig();
-    }
-
-    public void updateConfig() {
-        loadConfig();
-        updateSetting();
-    }
-
-    public void updateSetting() {
-        Config.getInstance().reload();
-
-        this.manager.getNpcs().forEach(npc -> {
-            npc.getTeam().setPrefix(Config.getInstance().prefix());
-            npc.getTeam().setSuffix(Config.getInstance().suffix());
-
-            if (Config.getInstance().nameColor() != null) {
-                npc.getTeam().setColor(Config.getInstance().nameColor());
-            }
-
-            npc.setSetting(Config.getInstance().setting());
-            npc.setLocation(Config.getInstance().getLocation());
-            npc.setName(Config.getInstance().name());
-            npc.respawn();
-        });
     }
 
 }
