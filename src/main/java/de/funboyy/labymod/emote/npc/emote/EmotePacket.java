@@ -1,6 +1,8 @@
 package de.funboyy.labymod.emote.npc.emote;
 
-import com.google.gson.*;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSerializer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

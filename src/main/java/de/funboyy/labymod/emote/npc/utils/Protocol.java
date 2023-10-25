@@ -11,7 +11,7 @@ public class Protocol {
     public static final String LABYMOD_CHANNEL = "labymod:neo";
 
     public static void sendMessage(final User user, final int id, final String messageContent) {
-        final PayloadKey key = new PayloadKey(user.isLegacy() ? LABYMOD_CHANNEL_LEGACY : LABYMOD_CHANNEL);
+        final PayloadKey key = new PayloadKey(LABYMOD_CHANNEL);
         final PayloadData data = new PayloadData();
         data.writeInt(id);
         data.writeString(messageContent);
@@ -21,7 +21,7 @@ public class Protocol {
     }
 
     public static void sendMessage(final User user, final String messageKey, final String messageContent) {
-        final PayloadKey key = new PayloadKey(user.isLegacy() ? LABYMOD_CHANNEL_LEGACY : LABYMOD_CHANNEL);
+        final PayloadKey key = new PayloadKey(LABYMOD_CHANNEL_LEGACY);
         final PayloadData data = new PayloadData();
         data.writeString(messageKey);
         data.writeString(messageContent);
