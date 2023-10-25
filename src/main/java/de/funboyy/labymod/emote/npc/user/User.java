@@ -7,6 +7,7 @@ import de.funboyy.labymod.emote.npc.config.Config;
 import de.funboyy.labymod.emote.npc.emote.Emote;
 import de.funboyy.labymod.emote.npc.emote.EmoteManager;
 import de.funboyy.labymod.emote.npc.emote.EmotePacket;
+import de.funboyy.labymod.emote.npc.utils.ClickAction;
 import de.funboyy.labymod.emote.npc.utils.ItemBuilder;
 import de.funboyy.labymod.emote.npc.utils.Protocol;
 import de.funboyy.version.helper.npc.NPC;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import lombok.Getter;
 import lombok.Setter;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -27,6 +29,9 @@ public class User {
     private static final Gson GSON_LEGACY = new GsonBuilder().registerTypeAdapter(EmotePacket.class, EmotePacket.getLegacySerializer())
             .registerTypeAdapter(EmotePacket.Emote.class, EmotePacket.Emote.getLegacySerializer()).create();
 
+    private static final String PREVIOUS_PAGE_TEXTURE = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTE4NWM5N2RiYjgzNTNkZTY1MjY5OGQyNGI2NDMyN2I3OTNhM2YzMmE5OGJlNjdiNzE5ZmJlZGFiMzVlIn19fQ==";
+    private static final String NEXT_PAGE_TEXTURE = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzFjMGVkZWRkNzExNWZjMWIyM2Q1MWNlOTY2MzU4YjI3MTk1ZGFmMjZlYmI2ZTQ1YTY2YzM0YzY5YzM0MDkxIn19fQ==";
+
     private final Player player;
     private final NPC npc;
 
@@ -37,13 +42,14 @@ public class User {
     protected User(final Player player) {
         this.player = player;
 
-        this.npc = new NPC(EmoteNPCPlugin.getInstance(), this.player, Config.getInstance().setting(), Config.getInstance().name(),
-                Config.getInstance().getLocation(), Skin.fromPlayer(this.player));
-        this.npc.getTeam().setPrefix(Config.getInstance().prefix());
-        this.npc.getTeam().setSuffix(Config.getInstance().suffix());
+        this.npc = new NPC(EmoteNPCPlugin.getInstance(), this.player, Config.NPC_SETTINGS.get(), Config.NPC_NAME.get(),
+                Config.NPC_LOCATION.get(), Skin.fromPlayer(this.player));
+        this.npc.getTeam().setPrefix(Config.SCOREBOARD_PREFIX.get());
+        this.npc.getTeam().setSuffix(Config.SCOREBOARD_SUFFIX.get());
 
-        if (Config.getInstance().nameColor() != null) {
-            this.npc.getTeam().setColor(Config.getInstance().nameColor());
+        final ChatColor color = Config.SCOREBOARD_COLOR.get();
+        if (color != null) {
+            this.npc.getTeam().setColor(color);
         }
 
         EmoteNPCPlugin.getInstance().getManager().registerNPC(this.npc);
@@ -63,7 +69,7 @@ public class User {
             Protocol.sendMessage(this, 18, GSON.toJson(packet, EmotePacket.class));
         }
 
-        if (Config.getInstance().debug()) {
+        if (Config.DEBUG.get()) {
             if (emoteId == -1) {
                 return;
             }
@@ -80,66 +86,68 @@ public class User {
     }
 
     public void openInventory(final int page) {
-        final Inventory inventory = Bukkit.createInventory(null, 45, Config.getInstance().getInventory());
+        final Inventory inventory = Bukkit.createInventory(null, 45, Config.INVENTORY_TITLE.get());
         final List<Emote> emotes = EmoteManager.getInstance().getEmotes().stream().filter(emote -> !emote.isDraft()).collect(Collectors.toList());
         final int pages = (emotes.size() / 21) + (emotes.size() % 21 > 0 ? 1 : 0);
 
-        int temp = (21 * (page - 1));
-        for (int i = 0; i < 45; i++) {
-            if (i >= 10 && i <= 16 || i >= 19 && i <= 25 || i >= 28 && i <= 34) {
-                if (emotes.size() <= temp) {
-                    continue;
-                }
+        inventory.setItem(4, new ItemBuilder(Material.EMERALD)
+                .name(Config.ITEM_PAGES.get().replace("%page%", String.valueOf(page)).replace("%max%", String.valueOf(pages)))
+                .amount(page)
+                .build());
 
-                final ItemBuilder builder = new ItemBuilder(Material.PAPER)
-                        .name("§7" + emotes.get(temp).getName())
-                        .nbtTag("Event", "playEmote")
-                        .nbtTag("EmoteID", emotes.get(temp).getId());
+        inventory.setItem(40, new ItemBuilder(Material.BARRIER)
+                .name(Config.ITEM_STOP_EMOTE.get())
+                .clickAction(ClickAction.STOP_EMOTE)
+                .build());
 
-                if (emotes.get(temp).getId() > 219) {
-                    builder.lore(Config.getInstance().getLabyMod4Only());
-                }
+        if (page != 1) {
+            inventory.setItem(39, new ItemBuilder(ItemBuilder.getSkull())
+                    .name(Config.ITEM_PREVIOUS_PAGE.get())
+                    .clickAction(ClickAction.PREVIOUS_PAGE)
+                    .dataInt(ClickAction.PAGE_KEY, page)
+                    .owner(PREVIOUS_PAGE_TEXTURE)
+                    .build());
+        }
 
-                inventory.setItem(i, builder.build());
-                temp++;
+        if (page < pages) {
+            inventory.setItem(41, new ItemBuilder(ItemBuilder.getSkull())
+                    .name(Config.ITEM_NEXT_PAGE.get())
+                    .clickAction(ClickAction.NEXT_PAGE)
+                    .dataInt(ClickAction.PAGE_KEY, page)
+                    .owner(NEXT_PAGE_TEXTURE)
+                    .build());
+        }
+
+        int slot = 10;
+        final int startIndex = 21 * (page - 1);
+
+        for (int i = 0; i < 21; i++) {
+            final int emoteIndex = i + startIndex;
+
+            // check if we didn't reach the end of the list
+            if (emotes.size() <= emoteIndex) {
+                break;
+            }
+
+            final Emote emote = emotes.get(emoteIndex);
+            final ItemBuilder builder = new ItemBuilder(Material.PAPER)
+                    .name("§7" + emote.getName())
+                    .clickAction(ClickAction.PLAY_EMOTE)
+                    .dataInt(ClickAction.EMOTE_KEY, emote.getId());
+
+            if (emote.getId() > 219) {
+                builder.lore(Config.ITEM_WARNING.get());
+            }
+
+            inventory.setItem(slot, builder.build());
+
+            // do line break when at the end of the line
+            if (i % 7 == 6) {
+                slot += 3;
                 continue;
             }
 
-            if (i == 4) {
-                inventory.setItem(i, new ItemBuilder(Material.EMERALD)
-                        .name(Config.getInstance().getPage().replace("%page%", String.valueOf(page))
-                                .replace("%max%", String.valueOf(pages)))
-                        .amount(page)
-                        .build());
-                continue;
-            }
-
-            if (i == 39 && page != 1) {
-                inventory.setItem(i, new ItemBuilder(ItemBuilder.getSkull())
-                        .name(Config.getInstance().getLastPage())
-                        .nbtTag("Event", "lastPage")
-                        .nbtTag("Page", page)
-                        .owner("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTE4NWM5N2RiYjgzNTNkZTY1MjY5OGQyNGI2NDMyN2I3OTNhM2YzMmE5OGJlNjdiNzE5ZmJlZGFiMzVlIn19fQ==")
-                        .build());
-                continue;
-            }
-
-            if (i == 40) {
-                inventory.setItem(i, new ItemBuilder(Material.BARRIER)
-                        .name(Config.getInstance().getStopEmote())
-                        .nbtTag("Event", "stopEmote")
-                        .build());
-                continue;
-            }
-
-            if (i == 41 && page < pages) {
-                inventory.setItem(i, new ItemBuilder(ItemBuilder.getSkull())
-                        .name(Config.getInstance().getNextPage())
-                        .nbtTag("Event", "nextPage")
-                        .nbtTag("Page", page)
-                        .owner("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzFjMGVkZWRkNzExNWZjMWIyM2Q1MWNlOTY2MzU4YjI3MTk1ZGFmMjZlYmI2ZTQ1YTY2YzM0YzY5YzM0MDkxIn19fQ==")
-                        .build());
-            }
+            slot++;
         }
 
         this.player.openInventory(inventory);
