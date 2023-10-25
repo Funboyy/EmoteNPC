@@ -12,9 +12,6 @@ public class ConfigSettings extends ConfigElement<Settings> {
 
             config.set(String.format(path, "toggleSneak"), value.toggleSneak());
             config.set(String.format(path, "lookClose"), value.lookClose());
-
-            Config.save();
-            Config.update();
         },
         () -> {
             final FileConfiguration config = Config.getFile();

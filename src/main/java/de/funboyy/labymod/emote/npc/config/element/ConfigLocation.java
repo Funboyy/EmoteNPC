@@ -18,9 +18,6 @@ public class ConfigLocation extends ConfigElement<Location> {
             config.set(String.format(path, "z"), value.getZ());
             config.set(String.format(path, "yaw"), value.getYaw());
             config.set(String.format(path, "pitch"), value.getPitch());
-
-            Config.save();
-            Config.update();
         },
         () -> {
             final FileConfiguration config = Config.getFile();

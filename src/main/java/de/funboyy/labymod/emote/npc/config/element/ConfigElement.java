@@ -1,5 +1,7 @@
 package de.funboyy.labymod.emote.npc.config.element;
 
+import de.funboyy.labymod.emote.npc.config.Config;
+
 public class ConfigElement<V> {
 
     private final Setter<V> setter;
@@ -12,6 +14,9 @@ public class ConfigElement<V> {
 
     public void set(final V value) {
         this.setter.set(value);
+
+        Config.save();
+        Config.update();
     }
 
     public V get() {
