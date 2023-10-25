@@ -36,25 +36,17 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder nbtTag(final String key, final String value) {
-        this.item.setItemMeta(this.meta);
-
-        final CustomItem item = CustomItem.fromItem(this.item);
-        CustomData data = item.getData();
-
-        if (data == null) {
-            data = new CustomData();
-        }
-
-        data.setString(key, value);
-        item.setData(data);
-
-        this.item = item.apply(this.item);
-        this.meta = this.item.getItemMeta();
+    public ItemBuilder clickAction(final ClickAction action) {
+        applyData(data -> data.setString(ClickAction.ACTION_KEY, action.name()));
         return this;
     }
 
-    public ItemBuilder nbtTag(final String key, final int value) {
+    public ItemBuilder dataInt(final String key, final int value) {
+        applyData(data -> data.setInt(key, value));
+        return this;
+    }
+
+    private void applyData(final DataEntry entry) {
         this.item.setItemMeta(this.meta);
 
         final CustomItem item = CustomItem.fromItem(this.item);
@@ -64,12 +56,11 @@ public class ItemBuilder {
             data = new CustomData();
         }
 
-        data.setInt(key, value);
+        entry.write(data);
         item.setData(data);
 
         this.item = item.apply(this.item);
         this.meta = this.item.getItemMeta();
-        return this;
     }
 
     // only Skull
@@ -94,6 +85,12 @@ public class ItemBuilder {
 
     public static Material getSkull() {
         return Version.getVersionId() <= Version.v1_12_R1 ? Material.valueOf("SKULL_ITEM") : Material.valueOf("PLAYER_HEAD");
+    }
+
+    private interface DataEntry {
+
+        void write(final CustomData data);
+
     }
 
 }
