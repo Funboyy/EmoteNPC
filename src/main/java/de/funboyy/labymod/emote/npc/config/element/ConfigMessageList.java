@@ -7,8 +7,13 @@ import java.util.stream.Collectors;
 public class ConfigMessageList extends ConfigElement<List<String>> {
 
     public ConfigMessageList(final String path) {
-        super(value -> {}, () -> Config.getFile().getStringList(path).stream().map(value ->
-                ConfigMessage.format(ConfigString.format(value))).collect(Collectors.toList()));
+        super(path);
+    }
+
+    @Override
+    public List<String> get() {
+        return Config.getFile().getStringList(super.path).stream().map(value ->
+                ConfigMessage.format(ConfigString.format(value))).collect(Collectors.toList());
     }
 
 }

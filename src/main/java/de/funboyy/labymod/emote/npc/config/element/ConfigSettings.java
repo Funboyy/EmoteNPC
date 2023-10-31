@@ -7,17 +7,25 @@ import org.bukkit.configuration.file.FileConfiguration;
 public class ConfigSettings extends ConfigElement<Settings> {
 
     public ConfigSettings(final String path) {
-        super(value -> {
-            final FileConfiguration config = Config.getFile();
+        super(path);
+    }
 
-            config.set(String.format(path, "toggleSneak"), value.toggleSneak());
-            config.set(String.format(path, "lookClose"), value.lookClose());
-        },
-        () -> {
-            final FileConfiguration config = Config.getFile();
+    @Override
+    public void set(final Settings settings) {
+        final FileConfiguration config = Config.getFile();
 
-            return new Settings(config.getBoolean(String.format(path, "toggleSneak")), config.getBoolean(String.format(path, "lookClose")));
-        });
+        config.set(String.format(super.path, "toggleSneak"), settings.toggleSneak());
+        config.set(String.format(super.path, "lookClose"), settings.lookClose());
+
+        super.save();
+    }
+
+    @Override
+    public Settings get() {
+        final FileConfiguration config = Config.getFile();
+
+        return new Settings(config.getBoolean(String.format(super.path, "toggleSneak")),
+                config.getBoolean(String.format(super.path, "lookClose")));
     }
 
 }

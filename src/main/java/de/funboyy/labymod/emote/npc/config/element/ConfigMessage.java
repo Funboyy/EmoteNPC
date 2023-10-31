@@ -8,6 +8,7 @@ public class ConfigMessage extends ConfigString {
         super(path);
     }
 
+    @Override
     public String get() {
         return format(super.get());
     }

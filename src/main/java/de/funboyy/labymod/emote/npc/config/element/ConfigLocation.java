@@ -9,28 +9,35 @@ import org.bukkit.configuration.file.FileConfiguration;
 public class ConfigLocation extends ConfigElement<Location> {
 
     public ConfigLocation(final String path) {
-        super(value -> {
-            final FileConfiguration config = Config.getFile();
+        super(path);
+    }
 
-            config.set(String.format(path, "world"), value.getWorld().getName());
-            config.set(String.format(path, "x"), value.getX());
-            config.set(String.format(path, "y"), value.getY());
-            config.set(String.format(path, "z"), value.getZ());
-            config.set(String.format(path, "yaw"), value.getYaw());
-            config.set(String.format(path, "pitch"), value.getPitch());
-        },
-        () -> {
-            final FileConfiguration config = Config.getFile();
+    @Override
+    public void set(final Location location) {
+        final FileConfiguration config = Config.getFile();
 
-            final World world = Bukkit.getWorld(config.getString(String.format(path, "world")));
-            final double x = config.getDouble(String.format(path, "x"));
-            final double y = config.getDouble(String.format(path, "y"));
-            final double z = config.getDouble(String.format(path, "z"));
-            final float yaw = (float) config.getDouble(String.format(path, "yaw"));
-            final float pitch = (float) config.getDouble(String.format(path, "pitch"));
+        config.set(String.format(super.path, "world"), location.getWorld().getName());
+        config.set(String.format(super.path, "x"), location.getX());
+        config.set(String.format(super.path, "y"), location.getY());
+        config.set(String.format(super.path, "z"), location.getZ());
+        config.set(String.format(super.path, "yaw"), location.getYaw());
+        config.set(String.format(super.path, "pitch"), location.getPitch());
 
-            return new Location(world == null ? Bukkit.getWorlds().get(0) : world, x, y, z, yaw, pitch);
-        });
+        super.save();
+    }
+
+    @Override
+    public Location get() {
+        final FileConfiguration config = Config.getFile();
+
+        final World world = Bukkit.getWorld(config.getString(String.format(super.path, "world")));
+        final double x = config.getDouble(String.format(super.path, "x"));
+        final double y = config.getDouble(String.format(super.path, "y"));
+        final double z = config.getDouble(String.format(super.path, "z"));
+        final float yaw = (float) config.getDouble(String.format(super.path, "yaw"));
+        final float pitch = (float) config.getDouble(String.format(super.path, "pitch"));
+
+        return new Location(world == null ? Bukkit.getWorlds().get(0) : world, x, y, z, yaw, pitch);
     }
 
 }

@@ -2,37 +2,25 @@ package de.funboyy.labymod.emote.npc.config.element;
 
 import de.funboyy.labymod.emote.npc.config.Config;
 
-public class ConfigElement<V> {
+public abstract class ConfigElement<V> {
 
-    private final Setter<V> setter;
-    private final Getter<V> getter;
+    protected final String path;
 
-    public ConfigElement(final Setter<V> setter, final Getter<V> getter) {
-        this.setter = setter;
-        this.getter = getter;
+    public ConfigElement(final String path) {
+        this.path = path;
     }
 
     public void set(final V value) {
-        this.setter.set(value);
+        Config.getFile().set(this.path, value);
 
+        save();
+    }
+
+    public abstract V get();
+
+    protected void save() {
         Config.save();
         Config.update();
-    }
-
-    public V get() {
-        return this.getter.get();
-    }
-
-    public interface Setter<V> {
-
-        void set(final V value);
-
-    }
-
-    public interface Getter<V> {
-
-        V get();
-
     }
 
 }

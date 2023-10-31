@@ -6,11 +6,12 @@ import net.md_5.bungee.api.ChatColor;
 public class ConfigString extends ConfigElement<String> {
 
     public ConfigString(final String path) {
-        super(value -> {}, () -> Config.getFile().getString(path));
+        super(path);
     }
 
+    @Override
     public String get() {
-        return format(super.get());
+        return format(Config.getFile().getString(super.path));
     }
 
     public static String format(final String value) {

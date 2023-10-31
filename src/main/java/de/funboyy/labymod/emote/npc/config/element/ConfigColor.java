@@ -6,15 +6,23 @@ import net.md_5.bungee.api.ChatColor;
 public class ConfigColor extends ConfigElement<ChatColor> {
 
     public ConfigColor(final String path) {
-        super(value -> {}, () -> {
-            final String value = Config.getFile().getString(path);
+        super(path);
+    }
 
-            if (value.charAt(0) != ChatColor.COLOR_CHAR || value.length() != 2) {
-                return null;
-            }
+    @Override
+    public void set(final ChatColor color) {
+        Config.getFile().set(super.path, color.toString());
+    }
 
-            return ChatColor.getByChar(value.toLowerCase().charAt(1));
-        });
+    @Override
+    public ChatColor get() {
+        final String value = Config.getFile().getString(super.path);
+
+        if (value.charAt(0) != ChatColor.COLOR_CHAR || value.length() != 2) {
+            return null;
+        }
+
+        return ChatColor.getByChar(value.toLowerCase().charAt(1));
     }
 
 }
