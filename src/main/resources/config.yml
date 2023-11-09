@@ -45,4 +45,8 @@ command:
     - "%prefix% &e/emote toggle sneaking &8> &7switches whether the NPC is sneaking when the player is sneaking"
     - "%prefix% &e/emote toggle lookClose &8> &7switches whether the NPC looks at the player all the time"
 
+message:
+  playEmote: "%prefix% &7The &e%emote% Emote &7will now be played!"
+  requiresLabyMod: "%prefix% &cYou have to use LabyMod! &o(https://labymod.net/download&o)"
+
 debug: false
