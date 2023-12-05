@@ -1832,13 +1832,8 @@
     "278": {
       "id": 278,
       "name": "Griddy",
-      "draft": true,
       "ignoredAbortActions": [
         "MOVEMENT"
-      ],
-      "disabledSuspensions": [
-        "POSITION",
-        "ROTATION"
       ],
       "attachedTo": "NONE"
     },
@@ -2692,6 +2687,53 @@
         "ATTACKING"
       ],
       "attachedTo": "ARM"
+    },
+    "331": {
+      "id": 331,
+      "name": "Ice Skating",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "332": {
+      "id": 332,
+      "name": "Snowboard",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
     }
   }
 }
