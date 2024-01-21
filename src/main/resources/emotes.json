@@ -1831,7 +1831,7 @@
     },
     "278": {
       "id": 278,
-      "name": "Griddy",
+      "name": "bsefsfdgdh",
       "ignoredAbortActions": [
         "MOVEMENT"
       ],
@@ -2016,20 +2016,24 @@
     },
     "290": {
       "id": 290,
-      "name": "Snowman",
-      "draft": true,
+      "name": "Snowman Hide",
       "props": true,
       "ignoredAbortActions": [
-        "MOVEMENT"
+        "MOVEMENT",
+        "JUMPING"
       ],
       "abortActions": [
-        "JUMPING",
         "SPRINTING",
         "SNEAKING",
         "FLYING",
         "SWIMMING",
         "DAMAGE",
         "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
       ],
       "attachedTo": "NONE"
     },
@@ -2097,7 +2101,6 @@
     "295": {
       "id": 295,
       "name": "A Baked Bean",
-      "draft": true,
       "ignoredAbortActions": [
         "MOVEMENT",
         "JUMPING",
@@ -2109,10 +2112,6 @@
         "SNEAKING",
         "DAMAGE",
         "ATTACKING"
-      ],
-      "disabledSuspensions": [
-        "POSITION",
-        "SCALE"
       ],
       "attachedTo": "NONE"
     },
@@ -2257,8 +2256,17 @@
     },
     "305": {
       "id": 305,
-      "name": "pray",
-      "draft": true,
+      "name": "Worship",
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
       "attachedTo": "NONE"
     },
     "306": {
@@ -2620,10 +2628,10 @@
       "name": "Two-Dimensional",
       "props": true,
       "ignoredAbortActions": [
-        "MOVEMENT"
+        "MOVEMENT",
+        "JUMPING"
       ],
       "abortActions": [
-        "JUMPING",
         "SPRINTING",
         "SNEAKING",
         "FLYING",
@@ -2734,6 +2742,86 @@
         "SCALE"
       ],
       "attachedTo": "NONE"
+    },
+    "333": {
+      "id": 333,
+      "name": "Griddy",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "334": {
+      "id": 334,
+      "name": "Speed Ice Skating",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "335": {
+      "id": 335,
+      "name": "Snowball Throw",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "336": {
+      "id": 336,
+      "name": "Spray",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "ARM"
     }
   }
 }
