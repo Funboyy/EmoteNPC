@@ -2838,6 +2838,303 @@
         "ATTACKING"
       ],
       "attachedTo": "NONE"
+    },
+    "338": {
+      "id": 338,
+      "name": "Probability",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "339": {
+      "id": 339,
+      "name": "Gaming",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "SNEAKING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "80",
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "340": {
+      "id": 340,
+      "name": "Byebye",
+      "draft": true,
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "341": {
+      "id": 341,
+      "name": "Hand Walk",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION"
+      ],
+      "attachedTo": "NONE"
+    },
+    "344": {
+      "id": 344,
+      "name": "Kart Drift Purple",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "345": {
+      "id": 345,
+      "name": "Kart Drift Pink",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "346": {
+      "id": 346,
+      "name": "Kart Drift Yellow",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "347": {
+      "id": 347,
+      "name": "Kart Drift Blue",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "349": {
+      "id": 349,
+      "name": "Kart Drift Red",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "350": {
+      "id": 350,
+      "name": "Kart Drift Green",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "353": {
+      "id": 353,
+      "name": "ComicBox",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "356": {
+      "id": 356,
+      "name": "Trash",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "JUMPING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "357": {
+      "id": 357,
+      "name": "Test Emote",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
     }
   }
 }
