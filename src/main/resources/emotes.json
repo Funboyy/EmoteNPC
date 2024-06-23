@@ -1342,7 +1342,8 @@
       "ignoredAbortActions": [
         "MOVEMENT"
       ],
-      "attachedTo": "NONE"
+      "attachedTo": "NONE",
+      "playerModel": true
     },
     "224": {
       "id": 224,
@@ -1812,7 +1813,8 @@
         "ROTATION",
         "SCALE"
       ],
-      "attachedTo": "NONE"
+      "attachedTo": "NONE",
+      "playerModel": true
     },
     "276": {
       "id": 276,
@@ -2910,7 +2912,7 @@
     },
     "344": {
       "id": 344,
-      "name": "Kart Drift Purple",
+      "name": "Drift Kart Purple",
       "props": true,
       "ignoredAbortActions": [
         "MOVEMENT",
@@ -2938,7 +2940,7 @@
     },
     "345": {
       "id": 345,
-      "name": "Kart Drift Pink",
+      "name": "Drift Kart Pink",
       "props": true,
       "ignoredAbortActions": [
         "MOVEMENT",
@@ -2966,7 +2968,7 @@
     },
     "346": {
       "id": 346,
-      "name": "Kart Drift Yellow",
+      "name": "Drift Kart Yellow",
       "props": true,
       "ignoredAbortActions": [
         "MOVEMENT",
@@ -2994,7 +2996,7 @@
     },
     "347": {
       "id": 347,
-      "name": "Kart Drift Blue",
+      "name": "Drift Kart Blue",
       "props": true,
       "ignoredAbortActions": [
         "MOVEMENT",
@@ -3022,7 +3024,7 @@
     },
     "349": {
       "id": 349,
-      "name": "Kart Drift Red",
+      "name": "Drift Kart Red",
       "props": true,
       "ignoredAbortActions": [
         "MOVEMENT",
@@ -3050,7 +3052,7 @@
     },
     "350": {
       "id": 350,
-      "name": "Kart Drift Green",
+      "name": "Drift Kart Green",
       "props": true,
       "ignoredAbortActions": [
         "MOVEMENT",
@@ -3098,7 +3100,6 @@
     "356": {
       "id": 356,
       "name": "Trash",
-      "draft": true,
       "props": true,
       "ignoredAbortActions": [
         "MOVEMENT",
@@ -3129,6 +3130,499 @@
         "JUMPING",
         "SPRINTING",
         "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "358": {
+      "id": 358,
+      "name": "Offroad Bike Red",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "359": {
+      "id": 359,
+      "name": "Offroad Bike Blue",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "360": {
+      "id": 360,
+      "name": "Offroad Bike Purple",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "361": {
+      "id": 361,
+      "name": "Offroad Bike Pink",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "362": {
+      "id": 362,
+      "name": "Offroad Bike Yellow",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "363": {
+      "id": 363,
+      "name": "Offroad Bike Green",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "72",
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "364": {
+      "id": 364,
+      "name": "Drinking",
+      "props": true,
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "40",
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "365": {
+      "id": 365,
+      "name": "Drinking Emote",
+      "draft": true,
+      "props": true,
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "40",
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "366": {
+      "id": 366,
+      "name": "Robot Tentacles",
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "367": {
+      "id": 367,
+      "name": "Spider hang",
+      "props": true,
+      "ignoredAbortActions": [
+        "JUMPING",
+        "SNEAKING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "MOVEMENT",
+        "SPRINTING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "368": {
+      "id": 368,
+      "name": "Action Figur",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "369": {
+      "id": 369,
+      "name": "Test2",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "370": {
+      "id": 370,
+      "name": "Chibi",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "371": {
+      "id": 371,
+      "name": "Chainsawman",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "textureRatio": {
+        "width": "88",
+        "height": "13"
+      },
+      "textureAnimationDelay": "82",
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "372": {
+      "id": 372,
+      "name": "Test Vehicle ",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "373": {
+      "id": 373,
+      "name": "",
+      "draft": true,
+      "attachedTo": "NONE"
+    },
+    "374": {
+      "id": 374,
+      "name": "Shopping Cart Black",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "375": {
+      "id": 375,
+      "name": "Shopping Cart White",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "376": {
+      "id": 376,
+      "name": "Marionette",
+      "draft": true,
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "377": {
+      "id": 377,
+      "name": "Dragon",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "378": {
+      "id": 378,
+      "name": "Extrem Cry",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "40",
+      "abortActions": [
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "379": {
+      "id": 379,
+      "name": "Fire Run",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "textureRatio": {
+        "width": "1",
+        "height": "1"
+      },
+      "textureAnimationDelay": "50",
+      "abortActions": [
         "FLYING",
         "SWIMMING",
         "DAMAGE",

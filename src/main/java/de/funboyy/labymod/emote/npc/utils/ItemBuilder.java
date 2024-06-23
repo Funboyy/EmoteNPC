@@ -37,12 +37,12 @@ public class ItemBuilder {
     }
 
     public ItemBuilder clickAction(final ClickAction action) {
-        applyData(data -> data.setString(ClickAction.ACTION_KEY, action.name()));
+        this.applyData(data -> data.setString(ClickAction.ACTION_KEY, action.name()));
         return this;
     }
 
     public ItemBuilder dataInt(final String key, final int value) {
-        applyData(data -> data.setInt(key, value));
+        this.applyData(data -> data.setInt(key, value));
         return this;
     }
 

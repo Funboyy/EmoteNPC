@@ -1,8 +1,5 @@
 package de.funboyy.labymod.emote.npc.listener;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import de.funboyy.labymod.emote.npc.user.UserManager;
 import de.funboyy.labymod.emote.npc.utils.Protocol;
 import de.funboyy.version.helper.payload.PayloadData;
@@ -18,7 +15,7 @@ public class PluginMessageListener implements org.bukkit.plugin.messaging.Plugin
             return;
         }
 
-        handleLabyJoin(player, Unpooled.wrappedBuffer(bytes), channel.equals(Protocol.LABYMOD_CHANNEL_LEGACY));
+        this.handleLabyJoin(player, Unpooled.wrappedBuffer(bytes), channel.equals(Protocol.LABYMOD_CHANNEL_LEGACY));
     }
 
     private void handleLabyJoin(final Player player, final ByteBuf byteBuf, final boolean legacy) {
@@ -33,28 +30,16 @@ public class PluginMessageListener implements org.bukkit.plugin.messaging.Plugin
         }
 
         else {
-            final int id = data.readInt();
+            final int id = data.readVarInt();
 
             if (id != 0) {
                 return;
             }
         }
 
-        final String json = data.readString(Short.MAX_VALUE);
-        @SuppressWarnings("deprecation")
-        final JsonElement element = new JsonParser().parse(json).getAsJsonObject();
+        final String version = data.readString(Short.MAX_VALUE);
 
-        if (!element.isJsonObject()) {
-            return;
-        }
-
-        final JsonObject object = element.getAsJsonObject();
-
-        if (!object.has("version") || !object.get("version").isJsonPrimitive()) {
-            return;
-        }
-
-        UserManager.getInstance().update(player, object.get("version").getAsString());
+        UserManager.getInstance().update(player, version);
     }
 
 }

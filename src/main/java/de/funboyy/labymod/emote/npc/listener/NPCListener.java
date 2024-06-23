@@ -64,7 +64,7 @@ public class NPCListener implements Listener {
 
             final int emoteId = data.getInt(ClickAction.EMOTE_KEY);
 
-            player.playSound(player.getLocation(), getSound(), 1, 1);
+            player.playSound(player.getLocation(), this.getSound(), 1, 1);
             player.closeInventory();
             user.playEmote(-1);
 
@@ -77,7 +77,7 @@ public class NPCListener implements Listener {
         }
 
         if (action == ClickAction.STOP_EMOTE) {
-            player.playSound(player.getLocation(), getSound(), 1, 1);
+            player.playSound(player.getLocation(), this.getSound(), 1, 1);
             user.playEmote(-1);
             return;
         }
@@ -87,7 +87,7 @@ public class NPCListener implements Listener {
                 return;
             }
 
-            player.playSound(player.getLocation(), getSound(), 1, 1);
+            player.playSound(player.getLocation(), this.getSound(), 1, 1);
             user.openInventory(data.getInt(ClickAction.PAGE_KEY) - 1);
             return;
         }
@@ -97,7 +97,7 @@ public class NPCListener implements Listener {
                 return;
             }
 
-            player.playSound(player.getLocation(), getSound(), 1, 1);
+            player.playSound(player.getLocation(), this.getSound(), 1, 1);
             user.openInventory(data.getInt(ClickAction.PAGE_KEY) + 1);
         }
     }
@@ -132,7 +132,7 @@ public class NPCListener implements Listener {
             }
 
             UserManager.getInstance().getUser(player).openInventory(1);
-            player.playSound(player.getLocation(), getSound(), 1f, 1f);
+            player.playSound(player.getLocation(), this.getSound(), 1f, 1f);
         }, 1);
     }
 

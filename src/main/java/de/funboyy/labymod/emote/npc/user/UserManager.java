@@ -31,7 +31,7 @@ public class UserManager {
     }
 
     public User register(final Player player) {
-        User user = getUser(player);
+        User user = this.getUser(player);
 
         if (user != null) {
             return user;
@@ -48,10 +48,10 @@ public class UserManager {
     }
 
     public void update(final Player player, final String version) {
-        User user = getUser(player);
+        User user = this.getUser(player);
 
         if (user == null) {
-            user = register(player);
+            user = this.register(player);
         }
 
         user.setVersion(version);
@@ -69,4 +69,5 @@ public class UserManager {
             EmoteNPCPlugin.getInstance().getLogger().info("User " + user.getPlayer().getName() + " unregistered");
         }
     }
+
 }

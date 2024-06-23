@@ -1,7 +1,5 @@
 package de.funboyy.labymod.emote.npc.user;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import de.funboyy.labymod.emote.npc.EmoteNPCPlugin;
 import de.funboyy.labymod.emote.npc.config.Config;
 import de.funboyy.labymod.emote.npc.emote.Emote;
@@ -24,10 +22,6 @@ import org.bukkit.inventory.Inventory;
 
 @Getter
 public class User {
-
-    private static final Gson GSON = new GsonBuilder().create();
-    private static final Gson GSON_LEGACY = new GsonBuilder().registerTypeAdapter(EmotePacket.class, EmotePacket.getLegacySerializer())
-            .registerTypeAdapter(EmotePacket.Emote.class, EmotePacket.Emote.getLegacySerializer()).create();
 
     private static final String PREVIOUS_PAGE_TEXTURE = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTE4NWM5N2RiYjgzNTNkZTY1MjY5OGQyNGI2NDMyN2I3OTNhM2YzMmE5OGJlNjdiNzE5ZmJlZGFiMzVlIn19fQ==";
     private static final String NEXT_PAGE_TEXTURE = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzFjMGVkZWRkNzExNWZjMWIyM2Q1MWNlOTY2MzU4YjI3MTk1ZGFmMjZlYmI2ZTQ1YTY2YzM0YzY5YzM0MDkxIn19fQ==";
@@ -63,11 +57,7 @@ public class User {
         final EmotePacket packet = new EmotePacket();
         packet.addEmote(new EmotePacket.Emote(this.npc.getUniqueId(), emoteId));
 
-        if (this.legacy) {
-            Protocol.sendMessage(this, "emote_api", GSON_LEGACY.toJson(packet, EmotePacket.class));
-        } else {
-            Protocol.sendMessage(this, 18, GSON.toJson(packet, EmotePacket.class));
-        }
+        Protocol.sendEmote(this, packet);
 
         if (Config.DEBUG.get()) {
             if (emoteId == -1) {

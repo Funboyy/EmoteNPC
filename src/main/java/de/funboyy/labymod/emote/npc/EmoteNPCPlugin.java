@@ -27,7 +27,7 @@ public class EmoteNPCPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         if (Version.getVersion() == null) {
-            getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.20.4] to use the plugin!");
+            super.getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.21] to use the plugin!");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
@@ -37,18 +37,18 @@ public class EmoteNPCPlugin extends JavaPlugin {
         Config.load();
 
         if (Config.DEBUG.get()) {
-            getLogger().info("Setting up for version " + Version.getVersion());
+            super.getLogger().info("Setting up for version " + Version.getVersion());
         }
 
         EmoteManager.getInstance().loadEmotes();
 
-        getServer().getPluginManager().registerEvents(new JoinQuitListener(), this);
-        getServer().getPluginManager().registerEvents(new NPCListener(), this);
+        super.getServer().getPluginManager().registerEvents(new JoinQuitListener(), this);
+        super.getServer().getPluginManager().registerEvents(new NPCListener(), this);
 
-        getCommand("emote").setExecutor(new EmoteCommand());
+        super.getCommand("emote").setExecutor(new EmoteCommand());
 
-        getServer().getMessenger().registerIncomingPluginChannel(this, Protocol.LABYMOD_CHANNEL_LEGACY, new PluginMessageListener());
-        getServer().getMessenger().registerIncomingPluginChannel(this, Protocol.LABYMOD_CHANNEL, new PluginMessageListener());
+        super.getServer().getMessenger().registerIncomingPluginChannel(this, Protocol.LABYMOD_CHANNEL_LEGACY, new PluginMessageListener());
+        super.getServer().getMessenger().registerIncomingPluginChannel(this, Protocol.LABYMOD_CHANNEL, new PluginMessageListener());
 
         Bukkit.getOnlinePlayers().forEach(player -> {
             final User user = UserManager.getInstance().register(player);
