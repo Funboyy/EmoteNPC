@@ -50,7 +50,7 @@ public class User {
     }
 
     public void playEmote(final int emoteId) {
-        if (!isPermitted()) {
+        if (!this.isPermitted()) {
             return;
         }
 
@@ -85,10 +85,15 @@ public class User {
                 .amount(page)
                 .build());
 
-        inventory.setItem(40, new ItemBuilder(Material.BARRIER)
+        final ItemBuilder stopBuilder = new ItemBuilder(Material.BARRIER)
                 .name(Config.ITEM_STOP_EMOTE.get())
-                .clickAction(ClickAction.STOP_EMOTE)
-                .build());
+                .clickAction(ClickAction.STOP_EMOTE);
+
+        if (!this.isLegacy()) {
+            stopBuilder.lore(Config.ITEM_LABY_3.get());
+        }
+
+        inventory.setItem(40, stopBuilder.build());
 
         if (page != 1) {
             inventory.setItem(39, new ItemBuilder(ItemBuilder.getSkull())
@@ -125,8 +130,8 @@ public class User {
                     .clickAction(ClickAction.PLAY_EMOTE)
                     .dataInt(ClickAction.EMOTE_KEY, emote.getId());
 
-            if (emote.getId() > 219) {
-                builder.lore(Config.ITEM_WARNING.get());
+            if (emote.getId() > 219 && this.isLegacy()) {
+                builder.lore(Config.ITEM_LABY_4.get());
             }
 
             inventory.setItem(slot, builder.build());

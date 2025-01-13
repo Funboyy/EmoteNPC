@@ -23,7 +23,8 @@ public class Config {
     public static final ConfigString ITEM_STOP_EMOTE = new ConfigString("inventory.item.stopEmote");
     public static final ConfigString ITEM_PREVIOUS_PAGE = new ConfigString("inventory.item.previousPage");
     public static final ConfigString ITEM_NEXT_PAGE = new ConfigString("inventory.item.nextPage");
-    public static final ConfigString ITEM_WARNING = new ConfigString("inventory.item.labyMod4Only");
+    public static final ConfigString ITEM_LABY_3 = new ConfigString("inventory.item.labyMod3Only");
+    public static final ConfigString ITEM_LABY_4 = new ConfigString("inventory.item.labyMod4Only");
 
     public static final ConfigMessage COMMAND_PERMISSION = new ConfigMessage("command.permission");
     public static final ConfigMessage COMMAND_ONLY_PLAYER = new ConfigMessage("command.onlyPlayer");

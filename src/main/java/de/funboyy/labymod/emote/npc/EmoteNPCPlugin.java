@@ -27,7 +27,7 @@ public class EmoteNPCPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         if (Version.getVersion() == null) {
-            super.getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.21] to use the plugin!");
+            super.getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.21.4] to use the plugin!");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }

@@ -24,6 +24,7 @@ inventory:
     stopEmote: "&cstop emote"
     previousPage: "&6previous page"
     nextPage: "&6next page"
+    labyMod3Only: "&8only with LabyMod 3"
     labyMod4Only: "&8only with LabyMod 4"
 
 command:

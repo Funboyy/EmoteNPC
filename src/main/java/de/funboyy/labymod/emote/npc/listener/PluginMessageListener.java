@@ -1,5 +1,7 @@
 package de.funboyy.labymod.emote.npc.listener;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import de.funboyy.labymod.emote.npc.user.UserManager;
 import de.funboyy.labymod.emote.npc.utils.Protocol;
 import de.funboyy.version.helper.payload.PayloadData;
@@ -20,6 +22,7 @@ public class PluginMessageListener implements org.bukkit.plugin.messaging.Plugin
 
     private void handleLabyJoin(final Player player, final ByteBuf byteBuf, final boolean legacy) {
         final PayloadData data = new PayloadData(byteBuf);
+        final String version;
 
         if (legacy) {
             final String key = data.readString(Short.MAX_VALUE);
@@ -27,6 +30,26 @@ public class PluginMessageListener implements org.bukkit.plugin.messaging.Plugin
             if (!key.equals("INFO")) {
                 return;
             }
+
+            final JsonElement json = Protocol.GSON.fromJson(data.readString(Short.MAX_VALUE), JsonElement.class);
+
+            if (!json.isJsonObject()) {
+                return;
+            }
+
+            final JsonObject object = json.getAsJsonObject();
+
+            if (!object.has("version")) {
+                return;
+            }
+
+            final JsonElement element = object.get("version");
+
+            if (!element.isJsonPrimitive()) {
+                return;
+            }
+
+            version = element.getAsString();
         }
 
         else {
@@ -35,9 +58,9 @@ public class PluginMessageListener implements org.bukkit.plugin.messaging.Plugin
             if (id != 0) {
                 return;
             }
-        }
 
-        final String version = data.readString(Short.MAX_VALUE);
+            version = data.readString(Short.MAX_VALUE);
+        }
 
         UserManager.getInstance().update(player, version);
     }

@@ -1,8 +1,10 @@
 package de.funboyy.labymod.emote.npc.emote;
 
-import com.google.gson.*;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import de.funboyy.labymod.emote.npc.EmoteNPCPlugin;
 import de.funboyy.labymod.emote.npc.config.Config;
+import de.funboyy.labymod.emote.npc.utils.Protocol;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,8 +18,6 @@ import lombok.Getter;
 
 @Getter
 public class EmoteManager {
-
-    private static final Gson GSON = new GsonBuilder().create();
 
     private static EmoteManager instance;
 
@@ -49,8 +49,7 @@ public class EmoteManager {
         }
 
         final BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        @SuppressWarnings("deprecation")
-        final JsonElement element = new JsonParser().parse(reader);
+        final JsonElement element = Protocol.GSON.fromJson(reader, JsonElement.class);
 
         if (!element.isJsonObject()) {
             return;
@@ -68,7 +67,7 @@ public class EmoteManager {
                 .map(Map.Entry::getValue)
                 .filter(JsonElement::isJsonObject)
                 .map(JsonElement::getAsJsonObject)
-                .map(emote -> GSON.fromJson(emote, Emote.class))
+                .map(emote -> Protocol.GSON.fromJson(emote, Emote.class))
                 .filter(emote -> emote.getName() != null)
                 .collect(Collectors.toList()));
 

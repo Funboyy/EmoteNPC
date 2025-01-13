@@ -10,7 +10,7 @@ import de.funboyy.version.helper.payload.PayloadKey;
 
 public class Protocol {
 
-    private static final Gson GSON = new GsonBuilder().create();
+    public static final Gson GSON = new GsonBuilder().create();
 
     public static final String LABYMOD_CHANNEL_LEGACY = "labymod3:main";
     public static final String LABYMOD_CHANNEL = "labymod:neo";

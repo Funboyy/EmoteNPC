@@ -1694,15 +1694,6 @@
       ],
       "attachedTo": "NONE"
     },
-    "264": {
-      "id": 264,
-      "name": "Tiny",
-      "draft": true,
-      "ignoredAbortActions": [
-        "MOVEMENT"
-      ],
-      "attachedTo": "NONE"
-    },
     "265": {
       "id": 265,
       "name": "boom",
@@ -2165,7 +2156,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "100",
+      "textureAnimationDelay": 100,
       "abortActions": [
         "SWIMMING",
         "DAMAGE",
@@ -2204,7 +2195,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "20",
+      "textureAnimationDelay": 20,
       "abortActions": [
         "SPRINTING",
         "FLYING",
@@ -2447,7 +2438,7 @@
         "width": "30",
         "height": "17"
       },
-      "textureAnimationDelay": "50",
+      "textureAnimationDelay": 50,
       "abortActions": [
         "DAMAGE",
         "ATTACKING"
@@ -2859,7 +2850,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "80",
+      "textureAnimationDelay": 80,
       "abortActions": [
         "MOVEMENT",
         "JUMPING",
@@ -2923,7 +2914,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -2951,7 +2942,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -2979,7 +2970,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3007,7 +2998,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3035,7 +3026,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3063,7 +3054,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3152,7 +3143,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3180,7 +3171,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3208,7 +3199,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3236,7 +3227,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3264,7 +3255,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3292,7 +3283,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "72",
+      "textureAnimationDelay": 72,
       "abortActions": [
         "SNEAKING",
         "FLYING",
@@ -3315,7 +3306,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "40",
+      "textureAnimationDelay": 40,
       "abortActions": [
         "MOVEMENT",
         "JUMPING",
@@ -3337,7 +3328,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "40",
+      "textureAnimationDelay": 40,
       "abortActions": [
         "MOVEMENT",
         "JUMPING",
@@ -3460,7 +3451,7 @@
         "width": "88",
         "height": "13"
       },
-      "textureAnimationDelay": "82",
+      "textureAnimationDelay": 82,
       "disabledSuspensions": [
         "POSITION",
         "ROTATION",
@@ -3597,7 +3588,7 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "40",
+      "textureAnimationDelay": 40,
       "abortActions": [
         "FLYING",
         "SWIMMING",
@@ -3621,10 +3612,34 @@
         "width": "1",
         "height": "1"
       },
-      "textureAnimationDelay": "50",
+      "textureAnimationDelay": 50,
       "abortActions": [
         "FLYING",
         "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "380": {
+      "id": 380,
+      "name": "Interstellar Snatch",
+      "draft": true,
+      "props": true,
+      "attachedTo": "NONE"
+    },
+    "381": {
+      "id": 381,
+      "name": "Tiny",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
         "DAMAGE",
         "ATTACKING"
       ],
