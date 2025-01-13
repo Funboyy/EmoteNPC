@@ -6,7 +6,7 @@
 
     <groupId>de.funboyy.labymod</groupId>
     <artifactId>emote-npc</artifactId>
-    <version>3.2-BETA.16</version>
+    <version>3.2-SNAPSHOT</version>
 
     <name>EmoteNPC</name>
     <inceptionYear>2021</inceptionYear>
