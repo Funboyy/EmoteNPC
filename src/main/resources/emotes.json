@@ -820,7 +820,7 @@
     },
     "134": {
       "id": 134,
-      "name": "Maneki-neko",
+      "name": "ManekiNeko",
       "ignoredAbortActions": [
         "MOVEMENT"
       ],
@@ -3642,6 +3642,50 @@
       "abortActions": [
         "DAMAGE",
         "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "382": {
+      "id": 382,
+      "name": "All my love",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "383": {
+      "id": 383,
+      "name": "ironman",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING"
+      ],
+      "textureRatio": {
+        "width": "15",
+        "height": "23"
+      },
+      "abortActions": [
+        "SNEAKING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
       ],
       "attachedTo": "NONE"
     }

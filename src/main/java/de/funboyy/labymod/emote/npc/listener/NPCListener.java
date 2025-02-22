@@ -151,7 +151,7 @@ public class NPCListener implements Listener {
     }
 
     private Sound getSound() {
-        return Version.getVersionId() <= Version.v1_8_R3 ? Sound.valueOf("CLICK") : Sound.valueOf("UI_BUTTON_CLICK");
+        return Version.isOlderThanOrEqualTo(Version.v1_8_R3) ? Sound.valueOf("CLICK") : Sound.valueOf("UI_BUTTON_CLICK");
     }
 
 }

@@ -69,7 +69,7 @@ public class ItemBuilder {
             return this;
         }
 
-        if (Version.getVersionId() <= Version.v1_12_R1) {
+        if (Version.isOlderThanOrEqualTo(Version.v1_12_R1)) {
             this.item.setDurability((short) 3);
         }
 
@@ -84,7 +84,7 @@ public class ItemBuilder {
     }
 
     public static Material getSkull() {
-        return Version.getVersionId() <= Version.v1_12_R1 ? Material.valueOf("SKULL_ITEM") : Material.valueOf("PLAYER_HEAD");
+        return Version.isOlderThanOrEqualTo(Version.v1_12_R1) ? Material.valueOf("SKULL_ITEM") : Material.valueOf("PLAYER_HEAD");
     }
 
     private interface DataEntry {
