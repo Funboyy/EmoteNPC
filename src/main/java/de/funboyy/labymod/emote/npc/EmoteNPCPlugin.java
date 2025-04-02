@@ -29,7 +29,7 @@ public class EmoteNPCPlugin extends JavaPlugin {
         this.manager = new NPCManager(this);
 
         if (Version.getVersion() == null) {
-            super.getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.21.4] to use the plugin!");
+            super.getLogger().warning("[" + this.getName() + "] You need to use the spigot versions [1.8 - 1.21.5] to use the plugin!");
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
