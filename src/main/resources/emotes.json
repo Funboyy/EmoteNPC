@@ -1355,7 +1355,16 @@
       "id": 225,
       "name": "FlipSit",
       "draft": true,
-      "attachedTo": "NONE"
+      "ignoredAbortActions": [
+        "MOVEMENT"
+      ],
+      "abortActions": [
+        "JUMPING"
+      ],
+      "disabledSuspensions": [
+        "SCALE"
+      ],
+      "attachedTo": "BODY"
     },
     "226": {
       "id": 226,
@@ -3686,6 +3695,95 @@
         "POSITION",
         "ROTATION",
         "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "384": {
+      "id": 384,
+      "name": "Bloom Spell",
+      "props": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "385": {
+      "id": 385,
+      "name": "Kaf2ka",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "BODY"
+    },
+    "386": {
+      "id": 386,
+      "name": "Kafka3",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "ATTACKING"
+      ],
+      "attachedTo": "BODY"
+    },
+    "387": {
+      "id": 387,
+      "name": "MiniMeSit",
+      "draft": true,
+      "ignoredAbortActions": [
+        "SNEAKING",
+        "ATTACKING"
+      ],
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "388": {
+      "id": 388,
+      "name": "Smol",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE"
+      ],
+      "abortActions": [
+        "ATTACKING"
       ],
       "attachedTo": "NONE"
     }
