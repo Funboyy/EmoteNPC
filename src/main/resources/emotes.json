@@ -2103,6 +2103,7 @@
     "295": {
       "id": 295,
       "name": "A Baked Bean",
+      "draft": true,
       "ignoredAbortActions": [
         "MOVEMENT",
         "JUMPING",
@@ -3786,6 +3787,122 @@
         "ATTACKING"
       ],
       "attachedTo": "NONE"
+    },
+    "389": {
+      "id": 389,
+      "name": "Roadster",
+      "draft": true,
+      "props": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "FLYING"
+      ],
+      "abortActions": [
+        "SNEAKING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "BODY"
+    },
+    "390": {
+      "id": 390,
+      "name": "Aura Farming",
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING"
+      ],
+      "abortActions": [
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE"
+    },
+    "391": {
+      "id": 391,
+      "name": "Gangam Style",
+      "draft": true,
+      "ignoredAbortActions": [
+        "JUMPING"
+      ],
+      "abortActions": [
+        "MOVEMENT",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE"
+    },
+    "393": {
+      "id": 393,
+      "name": "Push Ups",
+      "draft": true,
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE",
+      "playerModel": true
+    },
+    "394": {
+      "id": 394,
+      "name": "Evil Laugh",
+      "draft": true,
+      "ignoredAbortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING"
+      ],
+      "abortActions": [
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "disabledSuspensions": [
+        "POSITION",
+        "ROTATION",
+        "SCALE"
+      ],
+      "attachedTo": "NONE",
+      "playerModel": true
+    },
+    "395": {
+      "id": 395,
+      "name": "Twerk",
+      "abortActions": [
+        "MOVEMENT",
+        "JUMPING",
+        "SPRINTING",
+        "SNEAKING",
+        "FLYING",
+        "SWIMMING",
+        "DAMAGE",
+        "ATTACKING"
+      ],
+      "attachedTo": "NONE",
+      "playerModel": true
     }
   }
 }
